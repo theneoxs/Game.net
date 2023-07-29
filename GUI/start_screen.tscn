@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg6h3sn5532dd"]
+
+[ext_resource type="Script" path="res://GUI/start_screen.gd" id="1_jci21"]
+[ext_resource type="Texture2D" uid="uid://bb6i12dsd8bl" path="res://Src/GUI/Logo.png" id="1_xhked"]
+[ext_resource type="Shader" path="res://Src/Shaders/Glitch.gdshader" id="3_1t6gt"]
+[ext_resource type="AudioStream" uid="uid://dipm2mikn3gyj" path="res://Src/Sound/mixkit-electronic-glitch-sound-2940.wav" id="4_xww63"]
+[ext_resource type="AudioStream" uid="uid://bhgsok00ao4l4" path="res://Src/Sound/mixkit-glitch-roar-1033.wav" id="5_eo5h2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0dsa"]
+shader = ExtResource("3_1t6gt")
+shader_parameter/shake_power = 0.015
+shader_parameter/shake_rate = 0.5
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jci21")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0, 0.376471, 1)
+
+[node name="Logo" type="TextureRect" parent="."]
+modulate = Color(0.454902, 0.807843, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -262.0
+offset_right = 262.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xhked")
+
+[node name="ChangeTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Glitch" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_g0dsa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = 144.0
+offset_right = -256.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlackScreen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GlitchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xww63")
+
+[node name="GlitchStop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_eo5h2")
+mix_target = 2
+bus = &"SFX"
+
+[connection signal="timeout" from="ChangeTimer" to="." method="_on_change_timer_timeout"]
+[connection signal="finished" from="GlitchSound" to="." method="_on_glitch_sound_finished"]

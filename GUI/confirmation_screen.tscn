@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0p1j3erv817n"]
+
+[ext_resource type="Script" path="res://ConfirmationScreen.gd" id="1_2nswk"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="2_emnnb"]
+
+[node name="ConfirmationScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2nswk")
+
+[node name="Grayscale" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.14902, 0.14902, 0.560784)
+
+[node name="Plate" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -253.0
+offset_right = 387.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.301961, 0.152941, 0.396078, 1)
+
+[node name="Header" type="Label" parent="Plate"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -261.0
+offset_top = 59.0
+offset_right = 261.0
+offset_bottom = 112.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_emnnb")
+theme_override_font_sizes/font_size = 54
+text = "Подтверждение"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+uppercase = true
+
+[node name="Text" type="Label" parent="Plate"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -331.0
+offset_top = -92.0
+offset_right = 331.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_emnnb")
+theme_override_font_sizes/font_size = 54
+text = "Тут текст"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Plate"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -315.0
+offset_top = -120.0
+offset_right = 315.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Decline" type="Button" parent="Plate/HBoxContainer"]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_emnnb")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[node name="Confirm" type="Button" parent="Plate/HBoxContainer"]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_emnnb")
+theme_override_font_sizes/font_size = 36
+text = "OK"
+
+[connection signal="pressed" from="Plate/HBoxContainer/Decline" to="." method="_on_decline_pressed"]
+[connection signal="pressed" from="Plate/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
