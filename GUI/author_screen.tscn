@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqrjflnfv1b40"]
+
+[ext_resource type="Script" path="res://GUI/author_screen.gd" id="1_qpype"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="2_nd47y"]
+
+[node name="AuthorScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpype")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0, 0.376471, 1)
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -123.0
+offset_right = 364.0
+offset_bottom = -81.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_nd47y")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,4 +1,72 @@
-[gd_scene format=3 uid="uid://dso267311acyo"]
+[gd_scene load_steps=5 format=3 uid="uid://dso267311acyo"]
+
+[ext_resource type="Script" path="res://GUI/main_menu.gd" id="1_gikva"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="2_38g5d"]
+
+[sub_resource type="Shader" id="Shader_j8xpv"]
+code = "/*
+	Glitch Effect Shader by Yui Kinomoto @arlez80
+
+	MIT License
+*/
+
+shader_type canvas_item;
+
+// 振動の強さ
+uniform float shake_power = 0.03;
+// 振動率
+uniform float shake_rate : hint_range( 0.0, 1.0 ) = 0.2;
+// 振動速度
+uniform float shake_speed = 5.0;
+// 振動ブロックサイズ
+uniform float shake_block_size = 30.5;
+// 色の分離率
+uniform float shake_color_rate : hint_range( 0.0, 1.0 ) = 0.01;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+float random( float seed )
+{
+	return fract( 543.2543 * sin( dot( vec2( seed, seed ), vec2( 3525.46, -54.3415 ) ) ) );
+}
+
+void fragment( )
+{
+	float enable_shift = float(
+		random( trunc( TIME * shake_speed ) )
+	<	shake_rate
+	);
+
+	vec2 fixed_uv = SCREEN_UV;
+	fixed_uv.x += (
+		random(
+			( trunc( SCREEN_UV.y * shake_block_size ) / shake_block_size )
+		+	TIME
+		) - 0.5
+	) * shake_power * enable_shift;
+
+	vec4 pixel_color = textureLod( SCREEN_TEXTURE, fixed_uv, 0.0 );
+	pixel_color.r = mix(
+		pixel_color.r
+	,	textureLod( SCREEN_TEXTURE, fixed_uv + vec2( shake_color_rate, 0.0 ), 0.0 ).r
+	,	enable_shift
+	);
+	pixel_color.b = mix(
+		pixel_color.b
+	,	textureLod( SCREEN_TEXTURE, fixed_uv + vec2( -shake_color_rate, 0.0 ), 0.0 ).b
+	,	enable_shift
+	);
+	COLOR = pixel_color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4iuwf"]
+shader = SubResource("Shader_j8xpv")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.05
+shader_parameter/shake_speed = 1.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +75,99 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gikva")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0, 0.376471, 1)
+
+[node name="Start" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -260.0
+offset_right = 364.0
+offset_bottom = -218.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_38g5d")
+theme_override_font_sizes/font_size = 36
+text = "Start"
+
+[node name="Settings" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -192.0
+offset_right = 364.0
+offset_bottom = -150.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_38g5d")
+theme_override_font_sizes/font_size = 36
+text = "Settings"
+
+[node name="Exit" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -123.0
+offset_right = 364.0
+offset_bottom = -81.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_38g5d")
+theme_override_font_sizes/font_size = 36
+text = "Exit"
+
+[node name="Authors" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -123.0
+offset_right = -135.0
+offset_bottom = -81.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_38g5d")
+theme_override_font_sizes/font_size = 36
+text = "Authors"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 70.0
+offset_right = 380.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("2_38g5d")
+theme_override_font_sizes/font_size = 86
+text = "Game.NET"
+
+[node name="Glitch" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4iuwf")
+layout_mode = 1
+offset_left = 66.0
+offset_top = 39.0
+offset_right = 447.0
+offset_bottom = 170.0
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Authors" to="." method="_on_authors_pressed"]

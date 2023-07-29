@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2arhi00ybgqu"]
+
+[ext_resource type="Script" path="res://GUI/game_start_screen.gd" id="1_s7png"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="2_1qh1r"]
+
+[node name="GameStartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s7png")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0, 0.376471, 1)
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -123.0
+offset_right = 364.0
+offset_bottom = -81.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_1qh1r")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[node name="Next" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -123.0
+offset_right = -135.0
+offset_bottom = -81.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_1qh1r")
+theme_override_font_sizes/font_size = 36
+text = "Next"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
