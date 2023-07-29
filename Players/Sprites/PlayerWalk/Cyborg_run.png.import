@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvxtmcbpsu0k3"
-path="res://.godot/imported/Player Punch 64x64.png-582043e01e44245e2023d86f70bc06bd.ctex"
+uid="uid://dvs0ksjn7plbw"
+path="res://.godot/imported/Cyborg_run.png-6e3fd7c7c22019bcf398f72bc701c152.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Players/Sprites/Player Punch/Player Punch 64x64.png"
-dest_files=["res://.godot/imported/Player Punch 64x64.png-582043e01e44245e2023d86f70bc06bd.ctex"]
+source_file="res://Players/Sprites/PlayerWalk/Cyborg_run.png"
+dest_files=["res://.godot/imported/Cyborg_run.png-6e3fd7c7c22019bcf398f72bc701c152.ctex"]
 
 [params]
 

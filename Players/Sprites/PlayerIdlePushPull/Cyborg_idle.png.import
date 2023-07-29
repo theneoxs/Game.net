@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcvvv3pkg8qk7"
-path="res://.godot/imported/PlayerWalk 48x48.png-22859cc324bfa7c692ae29920c674a99.ctex"
+uid="uid://vxlqg6itjjqo"
+path="res://.godot/imported/Cyborg_idle.png-4377d0d7cd7d7a3d57e0e55aa0378868.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Players/Sprites/PlayerWalk/PlayerWalk 48x48.png"
-dest_files=["res://.godot/imported/PlayerWalk 48x48.png-22859cc324bfa7c692ae29920c674a99.ctex"]
+source_file="res://Players/Sprites/PlayerIdlePushPull/Cyborg_idle.png"
+dest_files=["res://.godot/imported/Cyborg_idle.png-4377d0d7cd7d7a3d57e0e55aa0378868.ctex"]
 
 [params]
 

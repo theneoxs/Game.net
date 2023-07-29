@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ejsxu7vjcng5"
-path="res://.godot/imported/Player Hurt 48x48.png-250dc14b71384d5bbd1ef5ee5d602a17.ctex"
+uid="uid://q628cokki4bq"
+path="res://.godot/imported/Cyborg_death.png-e9f6b58c0b64d276a7aaa45075253921.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Players/Sprites/Player Hurt-Damaged/Player Hurt 48x48.png"
-dest_files=["res://.godot/imported/Player Hurt 48x48.png-250dc14b71384d5bbd1ef5ee5d602a17.ctex"]
+source_file="res://Players/Sprites/PlayerDeath/Cyborg_death.png"
+dest_files=["res://.godot/imported/Cyborg_death.png-e9f6b58c0b64d276a7aaa45075253921.ctex"]
 
 [params]
 
