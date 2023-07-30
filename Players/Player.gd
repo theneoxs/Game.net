@@ -18,10 +18,8 @@ func _ready():
 	jump_sprite = $Jump
 	idle_sprite.show()
 
-func _process(delta):
-	update_animation_parameters()
-
 func _physics_process(delta):
+	update_animation_parameters()
 	if not is_on_floor():
 		velocity.y += gravity * delta
 

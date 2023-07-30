@@ -7,6 +7,8 @@ var next_scr = ""
 
 var is_process_change_scr = false
 
+var accepted_items = [false,false,true,false,false]
+
 signal changing_scene
 var is_changing_scene = false
 

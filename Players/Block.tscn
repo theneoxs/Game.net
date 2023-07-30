@@ -1,13 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dso267311acyo"]
+[gd_scene load_steps=5 format=3 uid="uid://dumwjtouh8ihn"]
 
-[ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="1_noydi"]
-[ext_resource type="Script" path="res://Levels/test_scene.gd" id="1_yle3w"]
-[ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="3_715jn"]
-[ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="4_2ja3w"]
-[ext_resource type="PackedScene" uid="uid://dumwjtouh8ihn" path="res://Players/Block.tscn" id="4_lvl71"]
+[ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_e2cg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ixjt"]
-texture = ExtResource("3_715jn")
+texture = ExtResource("1_e2cg1")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
 16:8/0 = 0
@@ -109,32 +105,23 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_3ixjt")
 
-[node name="TestScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_yle3w")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8th88"]
+custom_solver_bias = 0.125
+size = Vector2(64, 64)
 
-[node name="Player" parent="." instance=ExtResource("1_noydi")]
-floor_constant_speed = true
-floor_max_angle = 1.03149
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.2
+max_contacts_reported = 10
+contact_monitor = true
+can_sleep = false
+constant_force = Vector2(1.065, 1.015)
+constant_torque = 2.62
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2(-32, -31)
 tile_set = SubResource("TileSet_m3wa2")
 format = 2
-layer_0/tile_data = PackedInt32Array(851969, 131075, 0, 851970, 131075, 0, 851971, 131075, 0, 851972, 131075, 0, 851973, 131075, 0, 851974, 131075, 0, 851975, 131075, 0, 851976, 131075, 0, 851977, 131075, 0, 851978, 131075, 0, 851979, 131075, 0, 851980, 131075, 0, 851981, 131075, 0, 851982, 131075, 0, 851983, 131075, 0, 851984, 131075, 0, 851985, 131075, 0, 851986, 131075, 0, 851987, 131075, 0, 851988, 131075, 0, 851989, 131075, 0, 851990, 131075, 0, 851991, 131075, 0, 786456, 196611, 1, 786432, 262147, 1, 851968, 131075, 2, 851992, 196611, 2)
+layer_0/tile_data = PackedInt32Array(0, 1048579, 8)
 
-[node name="Block" parent="." instance=ExtResource("4_lvl71")]
-position = Vector2(884, 558)
-
-[node name="ChooseMode" parent="." instance=ExtResource("4_2ja3w")]
-visible = false
-layout_mode = 1
-
-[node name="Point_spawn" type="Node2D" parent="."]
-position = Vector2(1258, 376)
-
-[connection signal="choosing_item" from="ChooseMode" to="." method="_on_choose_mode_choosing_item"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8th88")

@@ -1,0 +1,224 @@
+[gd_scene load_steps=6 format=3 uid="uid://70pifexxpxl2"]
+
+[ext_resource type="Script" path="res://GUI/choose_mode.gd" id="1_i2478"]
+[ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_r6bug"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="2_k6a2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj85y"]
+atlas = ExtResource("1_r6bug")
+region = Rect2(1024, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdlug"]
+atlas = ExtResource("1_r6bug")
+region = Rect2(1088, 576, 64, 64)
+
+[node name="ChooseMode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i2478")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0392157, 0.0392157, 0.0392157, 0.584314)
+
+[node name="MainBlock" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1604.0
+offset_right = 1604.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="MainBlock"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -543.0
+offset_top = 149.0
+offset_right = 543.0
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_k6a2m")
+theme_override_font_sizes/font_size = 68
+text = "Выберите себе объект"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainBlock"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="Box" type="Control" parent="MainBlock/HBoxContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Box"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 200.0
+texture_normal = SubResource("AtlasTexture_fj85y")
+texture_disabled = SubResource("AtlasTexture_cdlug")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Box"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_k6a2m")
+theme_override_font_sizes/font_size = 42
+text = "Куб"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Plank" type="Control" parent="MainBlock/HBoxContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Plank"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 200.0
+texture_normal = SubResource("AtlasTexture_fj85y")
+texture_disabled = SubResource("AtlasTexture_cdlug")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Plank"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_k6a2m")
+theme_override_font_sizes/font_size = 42
+text = "Куб"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Rope" type="Control" parent="MainBlock/HBoxContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Rope"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 200.0
+texture_normal = SubResource("AtlasTexture_fj85y")
+texture_disabled = SubResource("AtlasTexture_cdlug")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Rope"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_k6a2m")
+theme_override_font_sizes/font_size = 42
+text = "Куб"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Fan" type="Control" parent="MainBlock/HBoxContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Fan"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 200.0
+texture_normal = SubResource("AtlasTexture_fj85y")
+texture_disabled = SubResource("AtlasTexture_cdlug")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Fan"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_k6a2m")
+theme_override_font_sizes/font_size = 42
+text = "Куб"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spring" type="Control" parent="MainBlock/HBoxContainer"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Spring"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 200.0
+texture_normal = SubResource("AtlasTexture_fj85y")
+texture_disabled = SubResource("AtlasTexture_cdlug")
+stretch_mode = 0
+
+[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Spring"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_k6a2m")
+theme_override_font_sizes/font_size = 42
+text = "Куб"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="MainBlock/HBoxContainer/Box/Button" to="." method="_on_cube_btn_pressed"]
+[connection signal="pressed" from="MainBlock/HBoxContainer/Plank/Button" to="." method="_on_plank_btn_pressed"]
+[connection signal="pressed" from="MainBlock/HBoxContainer/Rope/Button" to="." method="_on_rope_btn_pressed"]
+[connection signal="pressed" from="MainBlock/HBoxContainer/Fan/Button" to="." method="_on_fan_btn_pressed"]
+[connection signal="pressed" from="MainBlock/HBoxContainer/Spring/Button" to="." method="_on_spring_btn_pressed"]
