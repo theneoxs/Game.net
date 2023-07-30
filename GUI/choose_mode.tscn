@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://70pifexxpxl2"]
+[gd_scene load_steps=7 format=3 uid="uid://70pifexxpxl2"]
 
 [ext_resource type="Script" path="res://GUI/choose_mode.gd" id="1_i2478"]
 [ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_r6bug"]
@@ -11,6 +11,10 @@ region = Rect2(1024, 576, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdlug"]
 atlas = ExtResource("1_r6bug")
 region = Rect2(1088, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0by5p"]
+atlas = ExtResource("1_r6bug")
+region = Rect2(1281.1, 2.94146, 62.092, 61.4712)
 
 [node name="ChooseMode" type="Control"]
 layout_mode = 3
@@ -110,7 +114,7 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 offset_right = 200.0
 offset_bottom = 200.0
-texture_normal = SubResource("AtlasTexture_fj85y")
+texture_normal = SubResource("AtlasTexture_0by5p")
 texture_disabled = SubResource("AtlasTexture_cdlug")
 stretch_mode = 0
 
@@ -125,7 +129,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_k6a2m")
 theme_override_font_sizes/font_size = 42
-text = "Куб"
+text = "Доска"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

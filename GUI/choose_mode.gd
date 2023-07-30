@@ -60,7 +60,7 @@ func _on_cube_btn_pressed():
 
 
 func _on_plank_btn_pressed():
-	chose_item(0)
+	chose_item(1)
 
 
 func _on_rope_btn_pressed():

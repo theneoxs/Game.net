@@ -3,6 +3,10 @@
 [ext_resource type="Script" path="res://Players/Block.gd" id="1_c5hfr"]
 [ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="2_t1yxr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8th88"]
+custom_solver_bias = 0.125
+size = Vector2(64, 64)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_br46g"]
 texture = ExtResource("2_t1yxr")
 texture_region_size = Vector2i(64, 64)
@@ -801,10 +805,6 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_br46g")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8th88"]
-custom_solver_bias = 0.125
-size = Vector2(64, 64)
-
 [node name="Block" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 3
@@ -817,11 +817,11 @@ constant_force = Vector2(10, 10)
 constant_torque = 10.0
 script = ExtResource("1_c5hfr")
 
+[node name="CollisionBlock" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8th88")
+
 [node name="TileBlock" type="TileMap" parent="."]
 position = Vector2(-32, -31)
 tile_set = SubResource("TileSet_m3wa2")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 1048577, 8)
-
-[node name="CollisionBlock" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8th88")

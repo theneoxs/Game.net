@@ -1,6 +1,7 @@
 extends Control
 
 var block = load("res://Players/Block.tscn")
+var board = load("res://Players/Board.tscn")
 @onready var spawnpoint = $Point_spawn
 
 # Called when the node enters the scene tree for the first time.
@@ -20,5 +21,10 @@ func change_scene_to(scene = Global.next_scr):
 func _on_choose_mode_choosing_item(num):
 	if num == 0:
 		var spawn_block = block.instantiate()
+		spawn_block.position = spawnpoint.position
+		add_child(spawn_block)
+	
+	elif num == 1:
+		var spawn_block = board.instantiate()
 		spawn_block.position = spawnpoint.position
 		add_child(spawn_block)

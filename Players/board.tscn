@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://opv2tef4u2qe"]
+[gd_scene load_steps=6 format=3 uid="uid://opv2tef4u2qe"]
 
+[ext_resource type="Script" path="res://Players/Board.gd" id="1_7eqcl"]
 [ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_m5weh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35fhg"]
+size = Vector2(65, 191)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ixjt"]
 texture = ExtResource("1_m5weh")
@@ -108,6 +112,12 @@ use_texture_padding = false
 15:5/0 = 0
 15:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:5/0/physics_layer_0/angular_velocity = 0.0
+20:0/0 = 0
+20:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+20:0/0/physics_layer_0/angular_velocity = 0.0
+19:0/0 = 0
+19:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+19:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_giceg"]
 tile_size = Vector2i(64, 64)
@@ -115,9 +125,19 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_3ixjt")
 
 [node name="Board" type="RigidBody2D"]
-
-[node name="TileBoard" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_giceg")
-format = 2
+collision_layer = 2
+collision_mask = 3
+mass = 10.0
+constant_force = Vector2(10, 10)
+constant_torque = 10.0
+script = ExtResource("1_7eqcl")
 
 [node name="CollisionBoard" type="CollisionShape2D" parent="."]
+position = Vector2(31.5, 95.5)
+shape = SubResource("RectangleShape2D_35fhg")
+
+[node name="TileBoard" type="TileMap" parent="."]
+position = Vector2(-1, -1)
+tile_set = SubResource("TileSet_giceg")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1245187, 0, 65536, 1245187, 0, 131072, 1245187, 0)
