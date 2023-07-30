@@ -12,6 +12,8 @@ var idle_sprite
 var walk_sprite
 var jump_sprite
 
+var onRope = false
+
 func _ready():
 	animation_tree.active = true
 	idle_sprite = $Idle
