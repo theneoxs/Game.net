@@ -7,6 +7,7 @@ var coyouteTime = 2.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var ladderMap: TileMap = $LadderMap
 
 var idle_sprite
 var walk_sprite
@@ -23,7 +24,16 @@ func _ready():
 
 func _physics_process(delta):
 	update_animation_parameters()
-	if not is_on_floor():
+	
+	if 
+	
+	var Vdirection = Input.get_axis("m_up", "m_down")
+	if Vdirection:
+		velocity.y = Vdirection * SPEED
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+	
+	if not is_on_floor() and !onRope:
 		velocity.y += gravity * delta
 
 	# Handle Jump.
@@ -36,6 +46,9 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
+	
+
+	
 	
 	if is_on_floor():
 		coyouteTime = 2.0
