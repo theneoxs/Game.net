@@ -7,7 +7,6 @@ var coyouteTime = 2.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var ladderMap: TileMap = $LadderMap
 
 var idle_sprite
 var walk_sprite
@@ -21,21 +20,22 @@ func _ready():
 	walk_sprite = $Walk
 	jump_sprite = $Jump
 	idle_sprite.show()
+	onRope = false
 
 func _physics_process(delta):
 	update_animation_parameters()
 	
-	if 
-	
-	var Vdirection = Input.get_axis("m_up", "m_down")
-	if Vdirection:
-		velocity.y = Vdirection * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+	if onRope:
+		var Vdirection = Input.get_axis("m_up", "m_down")
+		if Vdirection:
+			velocity.y = Vdirection * SPEED
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	if not is_on_floor() and !onRope:
 		velocity.y += gravity * delta
-
+		
+	print(onRope)
 	# Handle Jump.
 	if (Input.is_action_just_pressed("m_jump") and is_on_floor()) or (Input.is_action_just_pressed("m_jump") and coyouteTime >0):
 		velocity.y = JUMP_VELOCITY
@@ -46,10 +46,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
-	
 
-	
-	
 	if is_on_floor():
 		coyouteTime = 2.0
 	elif not is_on_floor():
@@ -87,3 +84,13 @@ func flip_anim(is_left):
 
 
 
+func _on_area_2d_body_entered(body):
+	set_collision_mask_value(1, false)
+	onRope = true
+	print('enter')
+
+
+func _on_area_2d_body_exited(body):
+	set_collision_mask_value(1, true)
+	onRope = false
+	print('leave')
