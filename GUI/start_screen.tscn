@@ -78,9 +78,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="GlitchSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_xww63")
+volume_db = -9.0
 
 [node name="GlitchStop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_eo5h2")
+volume_db = -9.0
 mix_target = 2
 bus = &"SFX"
 

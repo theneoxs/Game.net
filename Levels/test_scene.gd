@@ -7,12 +7,9 @@ func _ready():
 	Global.changing_scene.connect(change_scene_to)
 
 
-func _on_back_pressed():
-	Global.set_next_scr("res://GUI/main_menu.tscn")
-
-func _on_next_pressed():
-	#Перемещение на уровень
-	Global.set_next_scr("res://Levels/test_scene.tscn")
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
 
 func change_scene_to(scene = Global.next_scr):
 	get_tree().change_scene_to_file(scene)
