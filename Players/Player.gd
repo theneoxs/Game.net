@@ -43,9 +43,9 @@ func update_animation_parameters():
 	else:
 		set_anim_tree(false, false, true)
 	
-	if velocity.x > 0:
+	if Input.is_action_just_pressed("m_right"):
 		flip_anim(false)
-	elif velocity.x < 0:
+	elif Input.is_action_just_pressed("m_left"):
 		flip_anim(true)
 
 #Установка анимаций: idle, move и jump
