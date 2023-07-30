@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="3_715jn"]
 [ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="4_2ja3w"]
 [ext_resource type="PackedScene" uid="uid://dumwjtouh8ihn" path="res://Players/Block.tscn" id="4_lvl71"]
-[ext_resource type="PackedScene" uid="uid://opv2tef4u2qe" path="res://Players/Board.tscn" id="6_ndfla"]
+[ext_resource type="PackedScene" uid="uid://opv2tef4u2qe" path="res://Players/Board.tscn" id="6_xvidb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ixjt"]
 texture = ExtResource("3_715jn")
@@ -134,13 +134,16 @@ layer_0/tile_data = PackedInt32Array(851969, 131075, 0, 851970, 131075, 0, 85197
 position = Vector2(884, 558)
 
 [node name="ChooseMode" parent="." instance=ExtResource("4_2ja3w")]
+visible = false
 layout_mode = 1
 
 [node name="Point_spawn" type="Node2D" parent="."]
 position = Vector2(1258, 376)
 
-[node name="Board" parent="." instance=ExtResource("6_ndfla")]
-position = Vector2(635, 634)
-freeze_mode = 1
+[node name="Board" parent="." instance=ExtResource("6_xvidb")]
+position = Vector2(944, 269)
+
+[node name="Block2" parent="." instance=ExtResource("4_lvl71")]
+position = Vector2(880, 475)
 
 [connection signal="choosing_item" from="ChooseMode" to="." method="_on_choose_mode_choosing_item"]

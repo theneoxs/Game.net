@@ -8,7 +8,7 @@ var board = load("res://Players/Board.tscn")
 func _ready():
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -28,3 +28,5 @@ func _on_choose_mode_choosing_item(num):
 		var spawn_block = board.instantiate()
 		spawn_block.position = spawnpoint.position
 		add_child(spawn_block)
+
+	

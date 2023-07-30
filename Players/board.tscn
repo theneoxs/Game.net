@@ -128,6 +128,10 @@ sources/3 = SubResource("TileSetAtlasSource_3ixjt")
 collision_layer = 2
 collision_mask = 3
 mass = 10.0
+max_contacts_reported = 10
+contact_monitor = true
+can_sleep = false
+freeze_mode = 1
 constant_force = Vector2(10, 10)
 constant_torque = 10.0
 script = ExtResource("1_7eqcl")
@@ -141,3 +145,5 @@ position = Vector2(-1, -1)
 tile_set = SubResource("TileSet_giceg")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 1245187, 0, 65536, 1245187, 0, 131072, 1245187, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
