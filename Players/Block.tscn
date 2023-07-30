@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dumwjtouh8ihn"]
+[gd_scene load_steps=6 format=3 uid="uid://dumwjtouh8ihn"]
 
+[ext_resource type="Script" path="res://Players/Block.gd" id="1_c5hfr"]
 [ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_e2cg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ixjt"]
@@ -109,19 +110,23 @@ sources/3 = SubResource("TileSetAtlasSource_3ixjt")
 custom_solver_bias = 0.125
 size = Vector2(64, 64)
 
-[node name="RigidBody2D" type="RigidBody2D"]
-gravity_scale = 0.2
+[node name="Block" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+mass = 10.0
 max_contacts_reported = 10
 contact_monitor = true
 can_sleep = false
-constant_force = Vector2(1.065, 1.015)
-constant_torque = 2.62
+freeze_mode = 1
+constant_force = Vector2(10, 10)
+constant_torque = 10.0
+script = ExtResource("1_c5hfr")
 
-[node name="TileMap2" type="TileMap" parent="."]
+[node name="TileBlock" type="TileMap" parent="."]
 position = Vector2(-32, -31)
 tile_set = SubResource("TileSet_m3wa2")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 1048579, 8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBlock" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8th88")

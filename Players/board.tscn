@@ -1,13 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dso267311acyo"]
+[gd_scene load_steps=4 format=3 uid="uid://opv2tef4u2qe"]
 
-[ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="1_noydi"]
-[ext_resource type="Script" path="res://Levels/test_scene.gd" id="1_yle3w"]
-[ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="3_715jn"]
-[ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="4_2ja3w"]
-[ext_resource type="PackedScene" uid="uid://dumwjtouh8ihn" path="res://Players/Block.tscn" id="4_lvl71"]
+[ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_m5weh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ixjt"]
-texture = ExtResource("3_715jn")
+texture = ExtResource("1_m5weh")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
 16:8/0 = 0
@@ -103,40 +99,25 @@ use_texture_padding = false
 8:2/0 = 0
 8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:2/0/physics_layer_0/angular_velocity = 0.0
+19:5/0 = 0
+19:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+19:5/0/physics_layer_0/angular_velocity = 0.0
+19:6/0 = 0
+19:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+19:6/0/physics_layer_0/angular_velocity = 0.0
+15:5/0 = 0
+15:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:5/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_m3wa2"]
+[sub_resource type="TileSet" id="TileSet_giceg"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_3ixjt")
 
-[node name="TestScene" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_yle3w")
+[node name="Board" type="RigidBody2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_noydi")]
-collision_layer = 2
-floor_constant_speed = true
-floor_max_angle = 1.03149
-safe_margin = 1.0
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_m3wa2")
+[node name="TileBoard" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_giceg")
 format = 2
-layer_0/tile_data = PackedInt32Array(851969, 131075, 0, 851970, 131075, 0, 851971, 131075, 0, 851972, 131075, 0, 851973, 131075, 0, 851974, 131075, 0, 851975, 131075, 0, 851976, 131075, 0, 851977, 131075, 0, 851978, 131075, 0, 851979, 131075, 0, 851980, 131075, 0, 851981, 131075, 0, 851982, 131075, 0, 851983, 131075, 0, 851984, 131075, 0, 851985, 131075, 0, 851986, 131075, 0, 851987, 131075, 0, 851988, 131075, 0, 851989, 131075, 0, 851990, 131075, 0, 851991, 131075, 0, 786456, 196611, 1, 786432, 262147, 1, 851968, 131075, 2, 851992, 196611, 2)
 
-[node name="Block" parent="." instance=ExtResource("4_lvl71")]
-position = Vector2(884, 558)
-
-[node name="ChooseMode" parent="." instance=ExtResource("4_2ja3w")]
-visible = false
-layout_mode = 1
-
-[node name="Point_spawn" type="Node2D" parent="."]
-position = Vector2(1258, 376)
-
-[connection signal="choosing_item" from="ChooseMode" to="." method="_on_choose_mode_choosing_item"]
+[node name="CollisionBoard" type="CollisionShape2D" parent="."]

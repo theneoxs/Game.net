@@ -63,3 +63,4 @@ func flip_anim(is_left):
 	walk_sprite.flip_h = is_left
 	jump_sprite.flip_h = is_left
 	walk_sprite.offset.x = -10 if is_left else 10
+
