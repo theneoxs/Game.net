@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7ootumjpmuf8"]
+[gd_scene load_steps=16 format=3 uid="uid://c7ootumjpmuf8"]
 
 [ext_resource type="Script" path="res://Levels/Level2.gd" id="1_gfrvq"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="2_mjfbu"]
 [ext_resource type="PackedScene" uid="uid://oj2d3kax3b25" path="res://LevelObjects/ladder_map.tscn" id="3_xtywo"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="4_w4388"]
+[ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="5_66xa4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uowfh"]
 size = Vector2(60, 206.75)
@@ -13,6 +14,75 @@ size = Vector2(60, 326.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mus4"]
 size = Vector2(60, 206.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7o532"]
+size = Vector2(60, 255.375)
+
+[sub_resource type="Curve2D" id="Curve2D_jtbwt"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1515, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_elkch"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 500, -321, 0, 0, 0, 0, 500, 313, 0, 0, 0, 0, 500, -321)
+}
+point_count = 3
+
+[sub_resource type="GDScript" id="GDScript_w75p7"]
+script/source = "extends PathFollow2D
+
+@export var slither_speed = 200
+@onready var path:Path2D = get_parent()
+@onready var l:Line2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():   
+	l = path.get_child(1)
+	for point in path.curve.get_baked_points():  
+		l.add_point(point) 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	set_progress(get_progress() + slither_speed * delta)
+	$SawSprite.rotation += delta*5
+"
+
+[sub_resource type="Curve2D" id="Curve2D_1r2gu"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1515, 0, 0, 0, 0, 0, 781.193, -4.93341, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1515, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_tik48"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1800, 0, 0, 0, 0, 0, 781.193, -4.93341, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1800, 0)
+}
+point_count = 4
+
+[sub_resource type="GDScript" id="GDScript_68i2x"]
+script/source = "extends PathFollow2D
+
+@export var slither_speed = 200
+@onready var path:Path2D = get_parent()
+@onready var l:Line2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():   
+	l = path.get_child(1)
+	for point in path.curve.get_baked_points():  
+		l.add_point(point) 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	set_progress(get_progress() + slither_speed * delta)
+	$SawSprite.rotation += delta*5
+"
 
 [node name="Level2" type="Control"]
 layout_mode = 3
@@ -27,7 +97,7 @@ script = ExtResource("1_gfrvq")
 layer_0/tile_data = PackedInt32Array(65536, 0, 3, 131072, 0, 3, 196608, 0, 3, 262144, 0, 3, 327680, 0, 3, 393216, 0, 3, 458752, 0, 3, 524288, 0, 3, 589824, 0, 3, 655360, 0, 3, 720896, 0, 3, 786432, 0, 3, 0, 65536, 1, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 15, 131072, 0, 16, 131072, 0, 17, 131072, 0, 18, 131072, 0, 19, 131072, 0, 20, 131072, 0, 21, 131072, 0, 22, 131072, 0, 23, 131072, 0, 1179648, 0, 4, 1179649, 65536, 4, 1179650, 65536, 4, 1179651, 65536, 4, 1179652, 65536, 4, 1179653, 65536, 4, 1179654, 65536, 4, 1179655, 65536, 4, 1179656, 65536, 4, 1179657, 65536, 4, 1179658, 65536, 4, 1179659, 65536, 4, 1179660, 65536, 4, 1179661, 65536, 4, 1179662, 65536, 4, 1179663, 65536, 4, 1179664, 65536, 4, 1179665, 65536, 4, 1179666, 65536, 4, 1179667, 65536, 4, 1179668, 65536, 4, 1179669, 65536, 4, 1179670, 65536, 4, 1179671, 65536, 4, 1179672, 65536, 4, 33, 131072, 1, 65569, 131072, 3, 131105, 131072, 3, 196641, 131072, 3, 262177, 131072, 3, 327713, 131072, 3, 393249, 131072, 3, 458785, 131072, 3, 524321, 131072, 3, 589857, 131072, 3, 655393, 131072, 3, 720929, 131072, 3, 786465, 131072, 3, 851968, 0, 3, 917504, 0, 3, 983040, 0, 3, 1048576, 0, 3, 1114112, 0, 3, 1179673, 65536, 4, 1179674, 65536, 4, 1179675, 65536, 4, 1179676, 65536, 4, 1179677, 65536, 4, 1179678, 65536, 4, 1179679, 65536, 4, 1179680, 65536, 4, 1179681, 131072, 4, 852001, 131072, 3, 917537, 131072, 3, 983073, 131072, 3, 1048609, 131072, 3, 1114145, 131072, 3, 24, 131072, 0, 25, 131072, 0, 26, 131072, 0, 27, 131072, 0, 28, 131072, 0, 29, 131072, 0, 30, 131072, 0, 31, 131072, 0, 32, 131072, 0, 655381, 458752, 1, 655386, 458752, 1, 655387, 458752, 1, 262172, 458752, 1, 262173, 458752, 1, 262174, 458752, 1, 262175, 458752, 1, 262176, 458752, 1, 196640, 327680, 0, 131104, 327680, 0, 131103, 327680, 0, 196639, 327680, 0, 1048578, 458752, 1, 1048579, 458752, 1, 1048580, 458752, 1, 1048581, 458752, 1, 1048587, 458752, 1, 1048588, 458752, 1, 1048589, 458752, 1, 1048590, 458752, 1, 1048591, 458752, 1, 1048592, 458752, 1, 1048597, 458752, 1, 1048598, 458752, 1, 1048599, 458752, 1, 1048600, 458752, 1, 1048601, 458752, 1, 1048602, 458752, 1, 1048603, 458752, 1, 851977, 458752, 1, 851978, 458752, 1, 851984, 458752, 1, 851985, 458752, 1, 851988, 458752, 1, 851989, 458752, 1, 917505, 327680, 0, 983041, 327680, 0, 917530, 458752, 1, 917531, 458752, 1, 917532, 458752, 1, 917533, 458752, 1, 917534, 458752, 1, 917535, 458752, 1, 917536, 458752, 1, 851969, 327680, 0, 851990, 458752, 1, 851983, 458752, 1, 851979, 458752, 1, 655370, 458752, 1, 655380, 458752, 1, 655388, 458752, 1, 655376, 458752, 1, 655375, 458752, 1, 655371, 458752, 1, 655385, 458752, 1, 786441, 458752, 1)
 
 [node name="LadderMap" parent="." instance=ExtResource("3_xtywo")]
-layer_0/tile_data = PackedInt32Array(524294, 0, 1, 589830, 0, 1, 655366, 0, 1, 720902, 0, 1, 786438, 0, 1, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 720906, 0, 0, 786442, 0, 0, 524302, 0, 0, 589838, 0, 0, 655374, 0, 0, 720910, 0, 0, 786446, 0, 0, 458770, 0, 2, 524306, 0, 0, 589842, 0, 0, 655378, 0, 0, 720914, 0, 0, 786450, 0, 0, 458774, 0, 2, 524310, 0, 0, 589846, 0, 0, 655382, 0, 0, 720918, 0, 0, 786454, 0, 0, 458778, 0, 2, 524314, 0, 0, 589850, 0, 0, 655386, 0, 0, 720922, 0, 0, 786458, 0, 0, 458758, 0, 2, 458762, 0, 2, 458766, 0, 2, 1245185, 0, 1, 1310721, 0, 1, 1376257, 0, 1, 1441793, 0, 1, 1507329, 0, 1, 1572865, 0, 1, 1638401, 0, 1, 851971, 0, 1, 917507, 0, 1, 983043, 0, 1, 1048579, 0, 1, 1114115, 0, 1, 1179651, 0, 1, 1245187, 0, 1, 655363, 0, 1, 720899, 0, 1, 786435, 0, 1)
+layer_0/tile_data = PackedInt32Array(524294, 0, 1, 589830, 0, 1, 655366, 0, 1, 720902, 0, 1, 786438, 0, 1, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 720906, 0, 0, 786442, 0, 0, 524302, 0, 0, 589838, 0, 0, 655374, 0, 0, 720910, 0, 0, 786446, 0, 0, 458770, 0, 2, 524306, 0, 0, 589842, 0, 0, 655378, 0, 0, 720914, 0, 0, 786450, 0, 0, 458774, 0, 2, 524310, 0, 0, 589846, 0, 0, 655382, 0, 0, 720918, 0, 0, 786454, 0, 0, 458778, 0, 2, 524314, 0, 0, 589850, 0, 0, 655386, 0, 0, 720922, 0, 0, 786458, 0, 0, 458758, 0, 2, 458762, 0, 2, 458766, 0, 2, 1245185, 0, 1, 1310721, 0, 1, 1376257, 0, 1, 1441793, 0, 1, 1507329, 0, 1, 1572865, 0, 1, 1638401, 0, 1, 851971, 0, 1, 917507, 0, 1, 983043, 0, 1, 1048579, 0, 1, 1114115, 0, 1, 1179651, 0, 1, 1245187, 0, 1, 655363, 0, 1, 720899, 0, 1, 786435, 0, 1, 1179680, 0, 1, 1114144, 0, 1, 1048608, 0, 1, 983072, 0, 1, 917536, 0, 1, 852000, 0, 1, 917534, 0, 1, 851998, 0, 1, 786462, 0, 1, 720926, 0, 1, 655390, 0, 1, 589854, 0, 1, 524318, 0, 1, 458782, 0, 5)
 
 [node name="Area2D" type="Area2D" parent="LadderMap"]
 
@@ -42,6 +112,14 @@ shape = SubResource("RectangleShape2D_1jrb6")
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="LadderMap/Area2D"]
 position = Vector2(98, 724)
 shape = SubResource("RectangleShape2D_0mus4")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="LadderMap/Area2D"]
+position = Vector2(2076, 508)
+shape = SubResource("RectangleShape2D_0mus4")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="LadderMap/Area2D"]
+position = Vector2(1950, 354.313)
+shape = SubResource("RectangleShape2D_7o532")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LadderMap/Area2D"]
 position = Vector2(665, 326.375)
@@ -69,6 +147,63 @@ position = Vector2(157, 925)
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(0.75, 0.75)
+
+[node name="SawNodes" type="Node" parent="."]
+
+[node name="Saw" type="Path2D" parent="SawNodes"]
+position = Vector2(176, 147)
+curve = SubResource("Curve2D_jtbwt")
+
+[node name="SawPath" parent="SawNodes/Saw" instance=ExtResource("5_66xa4")]
+position = Vector2(0, 0)
+
+[node name="Line2D" type="Line2D" parent="SawNodes/Saw"]
+
+[node name="Saw4" type="Path2D" parent="SawNodes"]
+position = Vector2(294, 724)
+curve = SubResource("Curve2D_elkch")
+
+[node name="SawPath" parent="SawNodes/Saw4" instance=ExtResource("5_66xa4")]
+position = Vector2(500, -321)
+rotation = 1.5708
+script = SubResource("GDScript_w75p7")
+
+[node name="Line2D" type="Line2D" parent="SawNodes/Saw4"]
+
+[node name="Saw6" type="Path2D" parent="SawNodes"]
+position = Vector2(813, 724)
+curve = SubResource("Curve2D_elkch")
+
+[node name="SawPath" parent="SawNodes/Saw6" instance=ExtResource("5_66xa4")]
+position = Vector2(500, -321)
+rotation = 1.5708
+script = SubResource("GDScript_w75p7")
+slither_speed = 300
+
+[node name="Line2D" type="Line2D" parent="SawNodes/Saw6"]
+
+[node name="Saw2" type="Path2D" parent="SawNodes"]
+position = Vector2(176, 1142)
+curve = SubResource("Curve2D_1r2gu")
+
+[node name="SawPath" parent="SawNodes/Saw2" instance=ExtResource("5_66xa4")]
+position = Vector2(1515, 0)
+rotation = -3.13487
+slither_speed = 600
+
+[node name="Line2D" type="Line2D" parent="SawNodes/Saw2"]
+
+[node name="Saw3" type="Path2D" parent="SawNodes"]
+position = Vector2(226, 469)
+curve = SubResource("Curve2D_tik48")
+
+[node name="SawPath" parent="SawNodes/Saw3" instance=ExtResource("5_66xa4")]
+position = Vector2(1800, 0)
+rotation = -3.13675
+script = SubResource("GDScript_68i2x")
+slither_speed = 400
+
+[node name="Line2D" type="Line2D" parent="SawNodes/Saw3"]
 
 [connection signal="body_entered" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_exited"]

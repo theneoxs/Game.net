@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-var slither_speed = 200
+@export var slither_speed = 200
 @onready var path:Path2D = get_parent()
 @onready var l:Line2D
 
