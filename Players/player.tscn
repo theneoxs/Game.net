@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dvs0ksjn7plbw" path="res://Players/Sprites/PlayerWalk/Cyborg_run.png" id="3_rv57i"]
 [ext_resource type="Texture2D" uid="uid://b6k2gbngjppxl" path="res://Players/Sprites/PlayerJump/Cyborg_jump.png" id="4_dnlf5"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dudlq"]
-radius = 32.0
-height = 90.0
-
 [sub_resource type="Animation" id="Animation_jla7i"]
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -155,14 +151,15 @@ states/run/position = Vector2(602, 194)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sklsx"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_k06tf"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_feog0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_2q062"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_nraoq"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_twbbj"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_ibxgr")]
 graph_offset = Vector2(-85, 22)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dudlq"]
+radius = 16.0
+height = 54.0
+
 [node name="Player" type="CharacterBody2D"]
 floor_stop_on_slope = false
 floor_block_on_wall = false
 safe_margin = 2.0
 script = ExtResource("1_w28kr")
-
-[node name="CollisionPlayer" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_dudlq")
 
 [node name="Idle" type="Sprite2D" parent="."]
 position = Vector2(0, -15)
@@ -197,3 +194,7 @@ active = true
 parameters/conditions/idle = false
 parameters/conditions/is_jumping = false
 parameters/conditions/is_moving = false
+
+[node name="CollisionPlayer" type="CollisionShape2D" parent="."]
+position = Vector2(1, 16)
+shape = SubResource("CapsuleShape2D_dudlq")
