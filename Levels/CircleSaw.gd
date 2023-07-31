@@ -11,10 +11,7 @@ func _ready():
 	for point in path.curve.get_baked_points():  
 		l.add_point(point) 
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
 	set_progress(get_progress() + slither_speed * delta)
 	pass

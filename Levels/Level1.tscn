@@ -497,9 +497,9 @@ size = Vector2(44.5, 281)
 
 [sub_resource type="Curve2D" id="Curve2D_rysrf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 3, 16, 0, 0, 0, 0, 287, -33, 0, 0, 0, 0, 393, -38, 0, 0, 0, 0, 696, -72, 0, 0, 0, 0, 891, 13, 0, 0, 0, 0, 1030, 160, 0, 0, 0, 0, 769, 234, 0, 0, 0, 0, 504, 305, 0, 0, 0, 0, 207, 316, 0, 0, 0, 0, -23, 285, 0, 0, 0, 0, 0, 10)
+"points": PackedVector2Array(0, 0, 0, 0, -39, -193, 0, 0, 0, 0, 390, -193, 0, 0, 0, 0, -38, -193)
 }
-point_count = 11
+point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bcpl"]
 radius = 77.0065
@@ -546,25 +546,24 @@ collision_layer = 2
 collision_mask = 3
 floor_constant_speed = true
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="Saw1" type="Path2D" parent="."]
 position = Vector2(418, 400)
 curve = SubResource("Curve2D_rysrf")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(3, 16)
-rotation = -0.170853
+[node name="SawPath" type="PathFollow2D" parent="Saw1"]
+position = Vector2(-39, -193)
 scale = Vector2(1, 1)
 script = ExtResource("7_7gfl4")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D"]
+[node name="SawCollision" type="StaticBody2D" parent="Saw1/SawPath"]
 
-[node name="Circle" type="CollisionShape2D" parent="Path2D/PathFollow2D/StaticBody2D"]
+[node name="SawCircleHitbox" type="CollisionShape2D" parent="Saw1/SawPath/SawCollision"]
 rotation = -0.0356992
 scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_4bcpl")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="Line2D" type="Line2D" parent="Path2D"]
+[node name="LineForRender" type="Line2D" parent="Saw1"]
 scale = Vector2(1, 1)
 default_color = Color(0.54902, 0.227451, 0.0901961, 1)
 joint_mode = 1
