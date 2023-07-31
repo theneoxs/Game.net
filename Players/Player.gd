@@ -35,7 +35,6 @@ func _physics_process(delta):
 	if not is_on_floor() and !onRope:
 		velocity.y += gravity * delta
 		
-	print(onRope)
 	# Handle Jump.
 	if (Input.is_action_just_pressed("m_jump") and is_on_floor()) or (Input.is_action_just_pressed("m_jump") and coyouteTime >0):
 		velocity.y = JUMP_VELOCITY

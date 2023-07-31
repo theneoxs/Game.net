@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://xkkpyigouepo"]
+[gd_scene load_steps=15 format=3 uid="uid://xkkpyigouepo"]
 
 [ext_resource type="Script" path="res://Levels/Level1.gd" id="1_n3phy"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_ml1i8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dumwjtouh8ihn" path="res://Players/Block.tscn" id="4_wf005"]
 [ext_resource type="PackedScene" uid="uid://opv2tef4u2qe" path="res://Players/board.tscn" id="5_liuw0"]
 [ext_resource type="Texture2D" uid="uid://bc7cygijvtf07" path="res://Src/TestTile/Laders.png" id="6_aikke"]
+[ext_resource type="Script" path="res://Levels/CircleSaw.gd" id="7_7gfl4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_ga0l2")
@@ -494,6 +495,15 @@ sources/0 = SubResource("TileSetAtlasSource_e4l1b")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ok7dd"]
 size = Vector2(44.5, 281)
 
+[sub_resource type="Curve2D" id="Curve2D_rysrf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3, 16, 0, 0, 0, 0, 287, -33, 0, 0, 0, 0, 393, -38, 0, 0, 0, 0, 696, -72, 0, 0, 0, 0, 891, 13, 0, 0, 0, 0, 1030, 160, 0, 0, 0, 0, 769, 234, 0, 0, 0, 0, 504, 305, 0, 0, 0, 0, 207, 316, 0, 0, 0, 0, -23, 285, 0, 0, 0, 0, 0, 10)
+}
+point_count = 11
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bcpl"]
+radius = 77.0065
+
 [node name="Level1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -535,6 +545,29 @@ position = Vector2(1059, 227)
 collision_layer = 2
 collision_mask = 3
 floor_constant_speed = true
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(418, 400)
+curve = SubResource("Curve2D_rysrf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(3, 16)
+rotation = -0.170853
+scale = Vector2(1, 1)
+script = ExtResource("7_7gfl4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D"]
+
+[node name="Circle" type="CollisionShape2D" parent="Path2D/PathFollow2D/StaticBody2D"]
+rotation = -0.0356992
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_4bcpl")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Line2D" type="Line2D" parent="Path2D"]
+scale = Vector2(1, 1)
+default_color = Color(0.54902, 0.227451, 0.0901961, 1)
+joint_mode = 1
 
 [connection signal="body_entered" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_exited"]
