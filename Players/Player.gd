@@ -38,6 +38,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if (Input.is_action_just_pressed("m_jump") and is_on_floor()) or (Input.is_action_just_pressed("m_jump") and coyouteTime >0):
 		velocity.y = JUMP_VELOCITY
+		coyouteTime = 0
 
 	var direction = Input.get_axis("m_left", "m_right")
 	if direction:
@@ -80,8 +81,6 @@ func flip_anim(is_left):
 	walk_sprite.flip_h = is_left
 	jump_sprite.flip_h = is_left
 	walk_sprite.offset.x = -10 if is_left else 10
-
-
 
 func _on_area_2d_body_entered(body):
 	set_collision_mask_value(1, false)
