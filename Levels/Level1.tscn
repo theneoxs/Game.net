@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dumwjtouh8ihn" path="res://Players/Block.tscn" id="4_wf005"]
 [ext_resource type="PackedScene" uid="uid://opv2tef4u2qe" path="res://Players/board.tscn" id="5_liuw0"]
 [ext_resource type="Texture2D" uid="uid://bc7cygijvtf07" path="res://Src/TestTile/Laders.png" id="6_aikke"]
-[ext_resource type="Script" path="res://Levels/CircleSaw.gd" id="7_7gfl4"]
+[ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="7_6382o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_ga0l2")
@@ -501,8 +501,11 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4bcpl"]
-radius = 77.0065
+[sub_resource type="Curve2D" id="Curve2D_uftj8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1666, 124, 0, 0, 0, 0, 1666, 600, 0, 0, 0, 0, 1666, 124)
+}
+point_count = 3
 
 [node name="Level1" type="Control"]
 layout_mode = 3
@@ -547,23 +550,24 @@ collision_mask = 3
 floor_constant_speed = true
 
 [node name="Saw1" type="Path2D" parent="."]
-position = Vector2(418, 400)
+position = Vector2(799, 553)
 curve = SubResource("Curve2D_rysrf")
 
-[node name="SawPath" type="PathFollow2D" parent="Saw1"]
-position = Vector2(-39, -193)
-scale = Vector2(1, 1)
-script = ExtResource("7_7gfl4")
-
-[node name="SawCollision" type="StaticBody2D" parent="Saw1/SawPath"]
-
-[node name="SawCircleHitbox" type="CollisionShape2D" parent="Saw1/SawPath/SawCollision"]
-rotation = -0.0356992
-scale = Vector2(1, 1)
-shape = SubResource("CircleShape2D_4bcpl")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
+[node name="SawPath" parent="Saw1" instance=ExtResource("7_6382o")]
 
 [node name="LineForRender" type="Line2D" parent="Saw1"]
+scale = Vector2(1, 1)
+default_color = Color(0.54902, 0.227451, 0.0901961, 1)
+joint_mode = 1
+
+[node name="Saw2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_uftj8")
+
+[node name="SawPath" parent="Saw2" instance=ExtResource("7_6382o")]
+position = Vector2(1666, 124)
+rotation = 1.5708
+
+[node name="LineForRender" type="Line2D" parent="Saw2"]
 scale = Vector2(1, 1)
 default_color = Color(0.54902, 0.227451, 0.0901961, 1)
 joint_mode = 1

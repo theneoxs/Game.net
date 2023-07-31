@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://de7whpki2sx07"]
+
+[ext_resource type="Script" path="res://LevelObjects/CircleSaw.gd" id="1_x3pa6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4bcpl"]
+radius = 77.0065
+
+[node name="SawPath" type="PathFollow2D"]
+position = Vector2(-39, -193)
+scale = Vector2(1, 1)
+script = ExtResource("1_x3pa6")
+
+[node name="SawCollision" type="StaticBody2D" parent="."]
+
+[node name="SawCircleHitbox" type="CollisionShape2D" parent="SawCollision"]
+rotation = -0.0356992
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_4bcpl")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="_Timer_59288" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
