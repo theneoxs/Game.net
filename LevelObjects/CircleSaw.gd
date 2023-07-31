@@ -14,4 +14,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	set_progress(get_progress() + slither_speed * delta)
-	pass
+	$SawSprite.rotation += delta*5

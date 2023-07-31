@@ -1,20 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://de7whpki2sx07"]
+[gd_scene load_steps=4 format=3 uid="uid://de7whpki2sx07"]
 
 [ext_resource type="Script" path="res://LevelObjects/CircleSaw.gd" id="1_x3pa6"]
+[ext_resource type="Texture2D" uid="uid://cmhf3nkqc6vnw" path="res://Src/TestTile/pixil-frame-0 (2).png" id="2_uk1dn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4bcpl"]
 radius = 77.0065
 
 [node name="SawPath" type="PathFollow2D"]
 position = Vector2(-39, -193)
-scale = Vector2(1, 1)
 script = ExtResource("1_x3pa6")
+
+[node name="SawSprite" type="Sprite2D" parent="."]
+position = Vector2(-0.999996, 0)
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("2_uk1dn")
+offset = Vector2(-2.455, -2.46)
 
 [node name="SawCollision" type="StaticBody2D" parent="."]
 
 [node name="SawCircleHitbox" type="CollisionShape2D" parent="SawCollision"]
 rotation = -0.0356992
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_4bcpl")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
