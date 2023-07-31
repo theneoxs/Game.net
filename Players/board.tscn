@@ -127,6 +127,7 @@ sources/3 = SubResource("TileSetAtlasSource_3ixjt")
 [node name="Board" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 3
+input_pickable = true
 mass = 10.0
 max_contacts_reported = 10
 contact_monitor = true
@@ -147,3 +148,4 @@ format = 2
 layer_0/tile_data = PackedInt32Array(0, 1245187, 0, 65536, 1245187, 0, 131072, 1245187, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

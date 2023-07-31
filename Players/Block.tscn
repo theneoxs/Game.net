@@ -806,8 +806,10 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_br46g")
 
 [node name="Block" type="RigidBody2D"]
+position = Vector2(33, 32)
 collision_layer = 2
 collision_mask = 3
+input_pickable = true
 mass = 10.0
 max_contacts_reported = 10
 contact_monitor = true
@@ -825,3 +827,5 @@ position = Vector2(-32, -31)
 tile_set = SubResource("TileSet_m3wa2")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 1048577, 8)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
