@@ -12,9 +12,14 @@ var accepted_items = [false,false,true,false,false]
 signal changing_scene
 var is_changing_scene = false
 
+var in_game = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	process_black_screen(delta)
+	
+	if Input.is_action_just_pressed("btn_back") and in_game and !has_node("CanvasLayer/Pause"):
+		$CanvasLayer.add_child(load("res://GUI/pause.tscn").instantiate())
 
 func process_black_screen(delta):
 	if black_screen.modulate.a >= 0.05 and is_process_change_scr == false:

@@ -556,7 +556,6 @@ curve = SubResource("Curve2D_rysrf")
 [node name="SawPath" parent="Saw1" instance=ExtResource("7_6382o")]
 
 [node name="LineForRender" type="Line2D" parent="Saw1"]
-scale = Vector2(1, 1)
 default_color = Color(0.54902, 0.227451, 0.0901961, 1)
 joint_mode = 1
 
@@ -568,7 +567,6 @@ position = Vector2(1666, 124)
 rotation = 1.5708
 
 [node name="LineForRender" type="Line2D" parent="Saw2"]
-scale = Vector2(1, 1)
 default_color = Color(0.54902, 0.227451, 0.0901961, 1)
 joint_mode = 1
 

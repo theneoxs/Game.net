@@ -6,6 +6,7 @@ var board = load("res://Players/Board.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.in_game = true
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
 	
