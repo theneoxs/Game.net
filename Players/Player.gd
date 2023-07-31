@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var idle_sprite
 var walk_sprite
 var jump_sprite
+var death_sprite
 
 var onRope = false
 
@@ -19,8 +20,12 @@ func _ready():
 	idle_sprite = $Idle
 	walk_sprite = $Walk
 	jump_sprite = $Jump
+	death_sprite = $Death
 	idle_sprite.show()
 	onRope = false
+
+func kill_player():
+	print("Received custom signal")
 
 func _physics_process(delta):
 	update_animation_parameters()
@@ -38,7 +43,6 @@ func _physics_process(delta):
 	# Handle Jump.
 	if (Input.is_action_just_pressed("m_jump") and is_on_floor()) or (Input.is_action_just_pressed("m_jump") and coyouteTime >0):
 		velocity.y = JUMP_VELOCITY
-		coyouteTime = 0
 
 	var direction = Input.get_axis("m_left", "m_right")
 	if direction:
@@ -55,11 +59,11 @@ func _physics_process(delta):
 func update_animation_parameters():
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
-			set_anim_tree(true, false, false)
+			set_anim_tree(true, false, false, false)
 		else:
-			set_anim_tree(false, true, false)
+			set_anim_tree(false, true, false, false)
 	else:
-		set_anim_tree(false, false, true)
+		set_anim_tree(false, false, true, false)
 	
 	if Input.is_action_just_pressed("m_right"):
 		flip_anim(false)
@@ -67,20 +71,25 @@ func update_animation_parameters():
 		flip_anim(true)
 
 #Установка анимаций: idle, move и jump
-func set_anim_tree(is_idle : bool, is_moving : bool, is_jumpong : bool):
+func set_anim_tree(is_idle : bool, is_moving : bool, is_jumping : bool, is_dying: bool):
 	animation_tree["parameters/conditions/idle"] = is_idle
 	animation_tree["parameters/conditions/is_moving"] = is_moving
-	animation_tree["parameters/conditions/is_jumping"] = is_jumpong
+	animation_tree["parameters/conditions/is_jumping"] = is_jumping
+	animation_tree["parameters/conditions/is_dying"] = is_dying
 	
 	idle_sprite.visible = is_idle 
 	walk_sprite.visible = is_moving 
-	jump_sprite.visible = is_jumpong 
+	jump_sprite.visible = is_jumping
+	death_sprite.visible = is_dying 
 
 func flip_anim(is_left):
 	idle_sprite.flip_h = is_left
 	walk_sprite.flip_h = is_left
 	jump_sprite.flip_h = is_left
+	death_sprite.flip_h = is_left
 	walk_sprite.offset.x = -10 if is_left else 10
+
+
 
 func _on_area_2d_body_entered(body):
 	set_collision_mask_value(1, false)
@@ -92,3 +101,4 @@ func _on_area_2d_body_exited(body):
 	set_collision_mask_value(1, true)
 	onRope = false
 	print('leave')
+

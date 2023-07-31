@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://rdximuw00vr0"]
+
+[ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_emyv8"]
+[ext_resource type="Script" path="res://Players/death_box.gd" id="1_p3e1d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5v5o"]
+atlas = ExtResource("1_emyv8")
+region = Rect2(768.461, 650.25, 62.0922, 33.8684)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2uij"]
+size = Vector2(65.4249, 25.9443)
+
+[node name="death_box" type="Area2D"]
+position = Vector2(658, 808)
+disable_mode = 1
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_p3e1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.76053, 2.21777)
+scale = Vector2(1.66969, 1.16471)
+texture = SubResource("AtlasTexture_y5v5o")
+
+[node name="CollisionDeath" type="CollisionShape2D" parent="."]
+position = Vector2(8.38037, 7.10883)
+scale = Vector2(1.66969, 1.16471)
+shape = SubResource("RectangleShape2D_u2uij")
+debug_color = Color(0.811765, 0.34902, 0.556863, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
