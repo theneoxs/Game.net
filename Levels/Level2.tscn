@@ -1,48 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7ootumjpmuf8"]
+[gd_scene load_steps=3 format=3 uid="uid://c7ootumjpmuf8"]
 
 [ext_resource type="Script" path="res://Levels/Level2.gd" id="1_gfrvq"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="2_mjfbu"]
-[ext_resource type="Texture2D" uid="uid://bc7cygijvtf07" path="res://Src/TestTile/Laders.png" id="3_clpb2"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4l1b"]
-texture = ExtResource("3_clpb2")
-texture_region_size = Vector2i(64, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -32, 16, 21.2132, 16, 20.5061, -16)
-0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -32, 16, 21.2132, 16, 20.5061, -16)
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -32, 16, 21.2132, 16, 20.5061, -16)
-0:3/0 = 0
-0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:3/0/physics_layer_0/angular_velocity = 0.0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -32, 16, 21.2132, 16, 20.5061, -16)
-0:4/0 = 0
-0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:4/0/physics_layer_0/angular_velocity = 0.0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -32, 16, 21.2132, 16, 20.5061, -16)
-0:5/0 = 0
-0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:5/0/physics_layer_0/angular_velocity = 0.0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -16, -32, 16, 21.2132, 16, 20.5061, -16)
-
-[sub_resource type="TileSet" id="TileSet_1bij3"]
-tile_size = Vector2i(64, 32)
-physics_layer_0/collision_layer = 0
-physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_e4l1b")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok7dd"]
-size = Vector2(55.25, 347)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv0aj"]
-size = Vector2(49, 221)
 
 [node name="Level2" type="Control"]
 layout_mode = 3
@@ -55,23 +14,3 @@ script = ExtResource("1_gfrvq")
 
 [node name="TileMap" parent="." instance=ExtResource("2_mjfbu")]
 layer_0/tile_data = PackedInt32Array(65536, 0, 3, 131072, 0, 3, 196608, 0, 3, 262144, 0, 3, 327680, 0, 3, 393216, 0, 3, 458752, 0, 3, 524288, 0, 3, 589824, 0, 3, 655360, 0, 3, 720896, 0, 3, 786432, 0, 3, 0, 65536, 1, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 15, 131072, 0, 16, 131072, 0, 17, 131072, 0, 18, 131072, 0, 19, 131072, 0, 20, 131072, 0, 21, 131072, 0, 22, 131072, 0, 23, 131072, 0, 1179648, 0, 4, 1179649, 65536, 4, 1179650, 65536, 4, 1179651, 65536, 4, 1179652, 65536, 4, 1179653, 65536, 4, 1179654, 65536, 4, 1179655, 65536, 4, 1179656, 65536, 4, 1179657, 65536, 4, 1179658, 65536, 4, 1179659, 65536, 4, 1179660, 65536, 4, 1179661, 65536, 4, 1179662, 65536, 4, 1179663, 65536, 4, 1179664, 65536, 4, 1179665, 65536, 4, 1179666, 65536, 4, 1179667, 65536, 4, 1179668, 65536, 4, 1179669, 65536, 4, 1179670, 65536, 4, 1179671, 65536, 4, 1179672, 65536, 4, 33, 131072, 1, 65569, 131072, 3, 131105, 131072, 3, 196641, 131072, 3, 262177, 131072, 3, 327713, 131072, 3, 393249, 131072, 3, 458785, 131072, 3, 524321, 131072, 3, 589857, 131072, 3, 655393, 131072, 3, 720929, 131072, 3, 786465, 131072, 3, 851968, 0, 3, 917504, 0, 3, 983040, 0, 3, 1048576, 0, 3, 1114112, 0, 3, 1179673, 65536, 4, 1179674, 65536, 4, 1179675, 65536, 4, 1179676, 65536, 4, 1179677, 65536, 4, 1179678, 65536, 4, 1179679, 65536, 4, 1179680, 65536, 4, 1179681, 131072, 4, 852001, 131072, 3, 917537, 131072, 3, 983073, 131072, 3, 1048609, 131072, 3, 1114145, 131072, 3, 24, 131072, 0, 25, 131072, 0, 26, 131072, 0, 27, 131072, 0, 28, 131072, 0, 29, 131072, 0, 30, 131072, 0, 31, 131072, 0, 32, 131072, 0)
-
-[node name="LadderMap" type="TileMap" parent="." groups=["Ladder"]]
-tile_set = SubResource("TileSet_1bij3")
-format = 2
-layer_0/tile_data = PackedInt32Array(1310750, 0, 1, 1245214, 0, 1, 1179678, 0, 1, 1376286, 0, 1, 1441822, 0, 1, 1507358, 0, 1, 1114142, 0, 5, 589827, 0, 5, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, 983043, 0, 0, 1048579, 0, 0, 1114115, 0, 0, 1179651, 0, 0, 1245187, 0, 0, 655363, 0, 0, 720899, 0, 0)
-
-[node name="Area2D" type="Area2D" parent="LadderMap"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderMap/Area2D"]
-position = Vector2(209, 458)
-shape = SubResource("RectangleShape2D_ok7dd")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="LadderMap/Area2D"]
-position = Vector2(1944, 662)
-shape = SubResource("RectangleShape2D_cv0aj")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="LadderMap/Area2D"]
-position = Vector2(1520, 646)
-shape = SubResource("RectangleShape2D_cv0aj")
