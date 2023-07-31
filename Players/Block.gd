@@ -15,12 +15,10 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-			print("нажали на блок")
 			selected = false
 
 func _on_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click_l"):
 		selected = true
-		print("держим блок ", selected)
 		linear_velocity.y = 0
 		linear_velocity.x = 0
