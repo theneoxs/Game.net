@@ -12,7 +12,7 @@ func _on_back_pressed():
 
 func _on_next_pressed():
 	#Перемещение на уровень
-	Global.set_next_scr("res://Levels/test_scene.tscn")
+	Global.set_next_scr("res://Levels/Level1.tscn")
 
 func change_scene_to(scene = Global.next_scr):
 	get_tree().change_scene_to_file(scene)

@@ -15,6 +15,8 @@ var death_sprite
 
 var onRope = false
 
+var is_death = false
+
 func _ready():
 	animation_tree.active = true
 	idle_sprite = $Idle
@@ -29,26 +31,26 @@ func kill_player():
 
 func _physics_process(delta):
 	update_animation_parameters()
-	
-	if onRope:
-		var Vdirection = Input.get_axis("m_up", "m_down")
-		if Vdirection:
-			velocity.y = Vdirection * SPEED
-		else:
-			velocity.y = move_toward(velocity.y, 0, SPEED)
-	
-	if not is_on_floor() and !onRope:
-		velocity.y += gravity * delta
+	if !is_death:
+		if onRope:
+			var Vdirection = Input.get_axis("m_up", "m_down")
+			if Vdirection:
+				velocity.y = Vdirection * SPEED
+			else:
+				velocity.y = move_toward(velocity.y, 0, SPEED)
 		
-	# Handle Jump.
-	if (Input.is_action_just_pressed("m_jump") and is_on_floor()) or (Input.is_action_just_pressed("m_jump") and coyouteTime >0):
-		velocity.y = JUMP_VELOCITY
+		if not is_on_floor() and !onRope:
+			velocity.y += gravity * delta
+			
+		# Handle Jump.
+		if (Input.is_action_just_pressed("m_jump") and is_on_floor()) or (Input.is_action_just_pressed("m_jump") and coyouteTime >0):
+			velocity.y = JUMP_VELOCITY
 
-	var direction = Input.get_axis("m_left", "m_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		var direction = Input.get_axis("m_left", "m_right")
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
 
 	if is_on_floor():
@@ -57,7 +59,9 @@ func _physics_process(delta):
 		coyouteTime -=0.1
 
 func update_animation_parameters():
-	if is_on_floor():
+	if is_death:
+		set_anim_tree(false, false, false, true)
+	elif is_on_floor():
 		if velocity == Vector2.ZERO:
 			set_anim_tree(true, false, false, false)
 		else:
@@ -65,10 +69,11 @@ func update_animation_parameters():
 	else:
 		set_anim_tree(false, false, true, false)
 	
-	if Input.is_action_just_pressed("m_right"):
-		flip_anim(false)
-	elif Input.is_action_just_pressed("m_left"):
-		flip_anim(true)
+	if !is_death:
+		if Input.is_action_just_pressed("m_right"):
+			flip_anim(false)
+		elif Input.is_action_just_pressed("m_left"):
+			flip_anim(true)
 
 #Установка анимаций: idle, move и jump
 func set_anim_tree(is_idle : bool, is_moving : bool, is_jumping : bool, is_dying: bool):
