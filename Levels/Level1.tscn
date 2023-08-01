@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://xkkpyigouepo"]
+[gd_scene load_steps=18 format=3 uid="uid://xkkpyigouepo"]
 
 [ext_resource type="Script" path="res://Levels/Level1.gd" id="1_n3phy"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_ml1i8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bc7cygijvtf07" path="res://Src/TestTile/Laders.png" id="6_aikke"]
 [ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="7_6382o"]
 [ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="8_lj7io"]
+[ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="9_c6d3o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_ga0l2")
@@ -595,7 +596,12 @@ joint_mode = 1
 [node name="Point_spawn" type="Node2D" parent="."]
 position = Vector2(447, 870)
 
+[node name="exit_area" parent="." instance=ExtResource("9_c6d3o")]
+z_index = -1
+position = Vector2(1057, 309)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("8_lj7io")]
 
