@@ -10,4 +10,5 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
-	emit_signal("time_to_die")
+	if body.get_name() == "Player":
+		emit_signal("time_to_die")

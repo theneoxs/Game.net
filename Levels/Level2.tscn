@@ -92,6 +92,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_gfrvq")
 
 [node name="TileMap" parent="." instance=ExtResource("2_mjfbu")]
@@ -209,6 +210,7 @@ slither_speed = 400
 [node name="exit_area" parent="." instance=ExtResource("6_ss2eg")]
 z_index = -1
 position = Vector2(2057, 114)
+next_scene = "res://Levels/test_scene.tscn"
 
 [connection signal="body_entered" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_exited"]
