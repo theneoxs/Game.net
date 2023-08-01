@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dso267311acyo"]
+[gd_scene load_steps=10 format=3 uid="uid://dso267311acyo"]
 
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="1_noydi"]
 [ext_resource type="Script" path="res://Levels/test_scene.gd" id="1_yle3w"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="4_2ja3w"]
 [ext_resource type="PackedScene" uid="uid://dumwjtouh8ihn" path="res://Players/Block.tscn" id="4_lvl71"]
 [ext_resource type="PackedScene" uid="uid://opv2tef4u2qe" path="res://Players/board.tscn" id="6_xvidb"]
+[ext_resource type="PackedScene" uid="uid://rdximuw00vr0" path="res://Players/death_box.tscn" id="7_p7c73"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ixjt"]
 texture = ExtResource("3_715jn")
@@ -148,4 +149,7 @@ position = Vector2(944, 269)
 [node name="Block2" parent="." instance=ExtResource("4_lvl71")]
 position = Vector2(880, 475)
 
+[node name="death_box" parent="." instance=ExtResource("7_p7c73")]
+
 [connection signal="choosing_item" from="ChooseMode" to="." method="_on_choose_mode_choosing_item"]
+[connection signal="time_to_die" from="death_box" to="Player" method="_to_die"]

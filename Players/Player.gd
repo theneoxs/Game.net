@@ -26,8 +26,6 @@ func _ready():
 	idle_sprite.show()
 	onRope = false
 
-func kill_player():
-	print("Received custom signal")
 
 func _physics_process(delta):
 	update_animation_parameters()
@@ -51,6 +49,9 @@ func _physics_process(delta):
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+	else:
+		velocity.x = 0
+		
 	move_and_slide()
 
 	if is_on_floor():
@@ -97,13 +98,22 @@ func flip_anim(is_left):
 
 
 func _on_area_2d_body_entered(body):
-	set_collision_mask_value(1, false)
-	onRope = true
-	print('enter')
+	if body.get_name() == "Player":
+		set_collision_mask_value(1, false)
+		onRope = true
+		print('enter')
 
 
 func _on_area_2d_body_exited(body):
-	set_collision_mask_value(1, true)
-	onRope = false
-	print('leave')
+	if body.get_name() == "Player":
+		set_collision_mask_value(1, true)
+		onRope = false
+		print('leave')
 
+
+func _to_die():
+	print("смерть")
+	is_death = true
+
+func huy():
+	pass

@@ -494,10 +494,10 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_e4l1b")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ok7dd"]
-size = Vector2(55.25, 347)
+size = Vector2(55.25, 270)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cv0aj"]
-size = Vector2(49, 221)
+size = Vector2(49, 166)
 
 [sub_resource type="Curve2D" id="Curve2D_rysrf"]
 _data = {
@@ -518,6 +518,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_n3phy")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -544,11 +545,11 @@ layer_0/tile_data = PackedInt32Array(1310750, 0, 1, 1245214, 0, 1, 1179678, 0, 1
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LadderMap/Area2D"]
-position = Vector2(220.625, 467.5)
+position = Vector2(220.625, 429)
 shape = SubResource("RectangleShape2D_ok7dd")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LadderMap/Area2D"]
-position = Vector2(1947.5, 656.5)
+position = Vector2(1947.5, 629)
 shape = SubResource("RectangleShape2D_cv0aj")
 
 [node name="Player" parent="." instance=ExtResource("2_ml1i8")]

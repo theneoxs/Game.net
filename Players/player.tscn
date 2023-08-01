@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://q628cokki4bq" path="res://Players/Sprites/PlayerDeath/Cyborg_death.png" id="5_an0q1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dudlq"]
-radius = 32.0
-height = 90.0
+radius = 24.0
+height = 54.0
 
 [sub_resource type="Animation" id="Animation_jla7i"]
 tracks/0/type = "value"
@@ -177,22 +177,22 @@ advance_mode = 2
 advance_condition = &"is_moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nisw5"]
-switch_mode = 2
+advance_mode = 2
 advance_condition = &"is_death"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o0tcg"]
-switch_mode = 2
+advance_mode = 2
 advance_condition = &"is_death"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xx5gp"]
-switch_mode = 2
+advance_mode = 2
 advance_condition = &"is_death"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lm1iy"]
 states/End/position = Vector2(913, 194)
 states/Start/position = Vector2(108, 194)
 states/death/node = SubResource("AnimationNodeAnimation_vvgf6")
-states/death/position = Vector2(809, 269)
+states/death/position = Vector2(805, 254)
 states/idle/node = SubResource("AnimationNodeAnimation_rr5ci")
 states/idle/position = Vector2(374, 194)
 states/jump/node = SubResource("AnimationNodeAnimation_17cp4")
@@ -200,7 +200,7 @@ states/jump/position = Vector2(477, 73)
 states/run/node = SubResource("AnimationNodeAnimation_50h2e")
 states/run/position = Vector2(602, 194)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sklsx"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_k06tf"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_feog0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_2q062"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_nraoq"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_twbbj"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_ibxgr"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_nisw5"), "run", "death", SubResource("AnimationNodeStateMachineTransition_o0tcg"), "jump", "death", SubResource("AnimationNodeStateMachineTransition_xx5gp")]
-graph_offset = Vector2(52, 61)
+graph_offset = Vector2(104, 93)
 
 [node name="Player" type="CharacterBody2D"]
 floor_stop_on_slope = false
@@ -209,6 +209,7 @@ safe_margin = 2.0
 script = ExtResource("1_w28kr")
 
 [node name="CollisionPlayer" type="CollisionShape2D" parent="."]
+position = Vector2(1, 19)
 shape = SubResource("CapsuleShape2D_dudlq")
 
 [node name="Idle" type="Sprite2D" parent="."]
@@ -234,7 +235,6 @@ centered = false
 hframes = 6
 
 [node name="Death" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-40, -69)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_an0q1")
