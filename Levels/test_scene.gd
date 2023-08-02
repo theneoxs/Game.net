@@ -27,4 +27,6 @@ func _on_choose_mode_choosing_item(num):
 		spawn_block.position = spawnpoint.position
 		add_child(spawn_block)
 
-	
+
+func _respawn_player():
+	$Player.position = $Respawn.position

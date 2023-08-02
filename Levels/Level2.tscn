@@ -253,6 +253,9 @@ rotation = -3.13675
 position = Vector2(2057, 114)
 next_scene = "res://Levels/test_scene.tscn"
 
+[node name="Respawn" type="Marker2D" parent="."]
+position = Vector2(191, 939)
+
 [connection signal="body_entered" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_exited"]
 [connection signal="time_to_die" from="SawNodes/Saw/SawPath" to="Player" method="_to_die"]
