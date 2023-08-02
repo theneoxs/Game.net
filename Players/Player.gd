@@ -22,6 +22,7 @@ var onRope = false
 
 var is_death = false
 var anim_off = false
+signal respawn_player
 
 func _ready():
 	animation_tree.active = true
@@ -76,6 +77,8 @@ func _physics_process(delta):
 		velocity.x = 0
 		if Input.is_action_just_pressed("m_restart"):
 			_to_die(false)
+			emit_signal("respawn_player")
+			
 		
 	move_and_slide()
 
