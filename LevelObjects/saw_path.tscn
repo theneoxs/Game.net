@@ -20,7 +20,6 @@ offset = Vector2(-2.455, -2.46)
 
 [node name="SawCircleHitbox" type="CollisionShape2D" parent="SawCollision"]
 rotation = -0.0356992
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_4bcpl")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 

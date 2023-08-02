@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bimpvnua3jloh"]
+
+[ext_resource type="Script" path="res://Players/thorn.gd" id="1_5sune"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_lvokf"]
+
+[node name="thorn" type="Area2D"]
+script = ExtResource("1_5sune")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2(1, 0.99435)
+color = Color(0.870588, 0, 0.196078, 1)
+texture = SubResource("ImageTexture_lvokf")
+polygon = PackedVector2Array(0, 0, 64, 32.1818, 0, 64.3637)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(7, 0)
+polygon = PackedVector2Array(-7, 0, -7, 64, 57, 32)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

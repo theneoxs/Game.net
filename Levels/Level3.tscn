@@ -43,6 +43,8 @@ zoom = Vector2(0.75, 0.75)
 [node name="Player" parent="." instance=ExtResource("3_ik25a")]
 position = Vector2(1768, 106)
 scale = Vector2(0.75, 0.75)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Saw1" type="Path2D" parent="."]
 curve = SubResource("Curve2D_aiwu6")
@@ -82,3 +84,8 @@ position = Vector2(672, 240)
 rotation = 1.57695
 
 [node name="Line2D" type="Line2D" parent="Saw4"]
+
+[connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Saw2/SawPath" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Saw3/SawPath" to="Player" method="_on_saw_path_time_to_die"]
+[connection signal="time_to_die" from="Saw4/SawPath" to="Player" method="_to_die"]
