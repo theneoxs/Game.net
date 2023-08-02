@@ -87,5 +87,5 @@ rotation = 1.57695
 
 [connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw2/SawPath" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Saw3/SawPath" to="Player" method="_on_saw_path_time_to_die"]
+[connection signal="time_to_die" from="Saw3/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw4/SawPath" to="Player" method="_to_die"]
