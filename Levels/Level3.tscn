@@ -138,7 +138,9 @@ position = Vector2(1767, 1145)
 rotation = -1.5708
 
 [node name="exit_area" parent="." instance=ExtResource("6_n1w4r")]
+z_index = -1
 position = Vector2(1094, 877)
+next_scene = "res://Levels/Level4.tscn"
 
 [connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw2/SawPath" to="Player" method="_to_die"]
