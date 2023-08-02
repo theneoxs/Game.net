@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dveg12xb2xq4n"]
+[gd_scene load_steps=8 format=3 uid="uid://dveg12xb2xq4n"]
 
 [ext_resource type="Script" path="res://Levels/Level3.gd" id="1_wgxo7"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="2_iumbv"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="3_ik25a"]
+[ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="4_pqdhw"]
+
+[sub_resource type="Curve2D" id="Curve2D_aiwu6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1852, 601, 0, 0, 0, 0, 386, 600, 0, 0, 0, 0, 1852, 601)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_4ipdc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 390, 403, 0, 0, 0, 0, 1852, 403, 0, 0, 0, 0, 390, 403)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_llwhk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 672, 240, 0, 0, 0, 0, 668, 890, 0, 0, 0, 0, 672, 240)
+}
+point_count = 3
 
 [node name="Level3" type="Control"]
 layout_mode = 3
@@ -23,3 +42,43 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="Player" parent="." instance=ExtResource("3_ik25a")]
 position = Vector2(1768, 106)
+scale = Vector2(0.75, 0.75)
+
+[node name="Saw1" type="Path2D" parent="."]
+curve = SubResource("Curve2D_aiwu6")
+
+[node name="SawPath" parent="Saw1" instance=ExtResource("4_pqdhw")]
+position = Vector2(1852, 601)
+rotation = -3.14091
+slither_speed = 400
+
+[node name="Line2D" type="Line2D" parent="Saw1"]
+
+[node name="Saw2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4ipdc")
+
+[node name="SawPath" parent="Saw2" instance=ExtResource("4_pqdhw")]
+position = Vector2(390, 403)
+slither_speed = 400
+
+[node name="Line2D" type="Line2D" parent="Saw2"]
+
+[node name="Saw3" type="Path2D" parent="."]
+position = Vector2(0, 88)
+curve = SubResource("Curve2D_llwhk")
+
+[node name="SawPath" parent="Saw3" instance=ExtResource("4_pqdhw")]
+position = Vector2(672, 240)
+rotation = 1.57695
+
+[node name="Line2D" type="Line2D" parent="Saw3"]
+
+[node name="Saw4" type="Path2D" parent="."]
+position = Vector2(1000, 80)
+curve = SubResource("Curve2D_llwhk")
+
+[node name="SawPath" parent="Saw4" instance=ExtResource("4_pqdhw")]
+position = Vector2(672, 240)
+rotation = 1.57695
+
+[node name="Line2D" type="Line2D" parent="Saw4"]
