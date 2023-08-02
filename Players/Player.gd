@@ -72,6 +72,7 @@ func _physics_process(delta):
 			conn_y = 0
 		velocity.y += conn_y
 	else:
+		velocity.y += gravity * delta
 		velocity.x = 0
 		if Input.is_action_just_pressed("m_restart"):
 			_to_die(false)
