@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bkug0ve80ydbn"]
+[gd_scene load_steps=41 format=3 uid="uid://bkug0ve80ydbn"]
 
 [ext_resource type="Script" path="res://Players/Player.gd" id="1_w28kr"]
 [ext_resource type="Texture2D" uid="uid://vxlqg6itjjqo" path="res://Players/Sprites/PlayerIdlePushPull/Cyborg_idle.png" id="2_1n8dw"]
@@ -271,7 +271,11 @@ states/use/position = Vector2(477, 334)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sklsx"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_k06tf"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_feog0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_2q062"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_nraoq"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_twbbj"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_ibxgr"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_nisw5"), "run", "death", SubResource("AnimationNodeStateMachineTransition_o0tcg"), "jump", "death", SubResource("AnimationNodeStateMachineTransition_xx5gp"), "idle", "use", SubResource("AnimationNodeStateMachineTransition_uy1ot"), "run", "use", SubResource("AnimationNodeStateMachineTransition_6heal"), "use", "death", SubResource("AnimationNodeStateMachineTransition_4sp0b"), "use", "idle", SubResource("AnimationNodeStateMachineTransition_dyv4c"), "use", "run", SubResource("AnimationNodeStateMachineTransition_wtieq"), "death", "jump", SubResource("AnimationNodeStateMachineTransition_ckix4"), "death", "run", SubResource("AnimationNodeStateMachineTransition_i1i5x"), "death", "idle", SubResource("AnimationNodeStateMachineTransition_liupn"), "death", "use", SubResource("AnimationNodeStateMachineTransition_wkki5")]
 graph_offset = Vector2(15, 119)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_15vqo"]
+radius = 49.8197
+
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 5
 floor_stop_on_slope = false
 floor_block_on_wall = false
 safe_margin = 2.0
@@ -331,3 +335,8 @@ parameters/conditions/is_action = false
 parameters/conditions/is_death = false
 parameters/conditions/is_jumping = false
 parameters/conditions/is_moving = false
+
+[node name="PlayerAreaTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAreaTrigger"]
+shape = SubResource("CircleShape2D_15vqo")

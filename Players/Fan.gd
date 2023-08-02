@@ -1,6 +1,8 @@
 extends RigidBody2D
 
 @onready var area_fan = $Area2D
+@onready var left_block = $TileBlockLeft
+@onready var right_block = $TileBlockRight
 var g_hero = null
 
 func _ready():
@@ -16,11 +18,22 @@ func _physics_process(delta):
 		linear_velocity.y = 0
 		if Input.is_action_pressed("m_rotate_r"):
 			area_fan.rotation_degrees = 0
+			left_block.visible = false
+			right_block.visible = true
 		elif Input.is_action_pressed("m_rotate_l"):
 			area_fan.rotation_degrees = -90
+			left_block.visible = true
+			right_block.visible = false
 	if g_hero != null:
 		var g_pos = g_hero.global_position
-		
+		var vec_move = Vector2(g_pos.x - self.global_position.x, g_pos.y - global_position.y)
+		g_hero.appent_to_conn_vector(vec_move.normalized()*math_calc_vector_to(vec_move.length()))
+
+func math_calc_vector_to(x):
+	if x <= 440:
+		return (-10.0+1.0/exp((x-900)/200))
+	else:
+		return 0
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -34,9 +47,12 @@ func _on_input_event(viewport, event, shape_idx):
 		linear_velocity.x = 0
 
 
-func _on_area_2d_body_entered(body):
-	g_hero = body
+
+func _on_area_2d_area_entered(area):
+	if area.get_name() == "PlayerAreaTrigger":
+		g_hero = area.get_parent()
 
 
-func _on_area_2d_body_exited(body):
-	g_hero - null
+func _on_area_2d_area_exited(area):
+	if area.get_name() == "PlayerAreaTrigger":
+		g_hero = null

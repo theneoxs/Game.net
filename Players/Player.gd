@@ -4,6 +4,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var coyouteTime = 2.0
 
+var conn_x = 0
+var conn_y = 0
+var reg_conn_const = 5
+var reg_conn_const_y = 10
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -49,10 +53,24 @@ func _physics_process(delta):
 			coyouteTime = 0
 
 		var direction = Input.get_axis("m_left", "m_right")
-		if direction:
-			velocity.x = direction * SPEED
+		velocity.x = direction * SPEED + conn_x
+#		if direction:
+#			velocity.x = direction * SPEED
+#		else:
+#			velocity.x = move_toward(velocity.x, 0, SPEED)
+			
+		if conn_x - reg_conn_const > 0:
+			conn_x -= reg_conn_const
+			#velocity.x += conn_x - direction * SPEED
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			conn_x = 0
+		if conn_y > 0 and conn_y - reg_conn_const_y > reg_conn_const_y:
+			conn_y -= reg_conn_const_y
+		elif conn_y < 0 and conn_y + reg_conn_const_y < -reg_conn_const_y:
+			conn_y += reg_conn_const_y
+		else:
+			conn_y = 0
+		velocity.y += conn_y
 	else:
 		velocity.x = 0
 		if Input.is_action_just_pressed("m_restart"):
@@ -64,6 +82,11 @@ func _physics_process(delta):
 		coyouteTime = 2.0
 	elif not is_on_floor():
 		coyouteTime -=0.1
+
+func appent_to_conn_vector(vec):
+	print(vec)
+	conn_x += vec.x if abs(conn_x) < SPEED else 0
+	conn_y += vec.y if abs(conn_y) < abs(JUMP_VELOCITY)*0.07 else 0
 
 func update_animation_parameters():
 	if is_death:

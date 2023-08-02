@@ -806,11 +806,8 @@ size = Vector2(67, 53)
 
 [node name="Fan" type="RigidBody2D"]
 position = Vector2(33, 32)
-collision_layer = 2
-collision_mask = 2
 input_pickable = true
 mass = 10.0
-max_contacts_reported = 10
 contact_monitor = true
 can_sleep = false
 lock_rotation = true
@@ -819,21 +816,31 @@ constant_force = Vector2(10, 10)
 constant_torque = 10.0
 script = ExtResource("1_0bee8")
 
-[node name="TileBlock" type="TileMap" parent="."]
+[node name="TileBlockRight" type="TileMap" parent="."]
 position = Vector2(-32, -31)
 tile_set = SubResource("TileSet_m3wa2")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 1245185, 10)
 
+[node name="TileBlockLeft" type="TileMap" parent="."]
+visible = false
+position = Vector2(-32, -31)
+tile_set = SubResource("TileSet_m3wa2")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1179649, 10)
+
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+priority = 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-3, 1, 43, -134, 142, -49)
+polygon = PackedVector2Array(-3, 1, 237, -299, 394, -102)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 3.5)
 shape = SubResource("RectangleShape2D_m6vqb")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
