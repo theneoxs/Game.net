@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://m0nkncgmrhfx"]
+[gd_scene load_steps=29 format=3 uid="uid://m0nkncgmrhfx"]
 
+[ext_resource type="Script" path="res://Levels/Level5.gd" id="1_3fy7m"]
 [ext_resource type="Script" path="res://Levels/LiftLevel.gd" id="1_cffup"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="1_wjdsd"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_4513f"]
@@ -152,6 +153,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3fy7m")
 
 [node name="Back" parent="." instance=ExtResource("1_wjdsd")]
 tile_set = SubResource("TileSet_l5eby")
@@ -438,6 +440,7 @@ collision_mask = 3
 
 [node name="exit_area" parent="." instance=ExtResource("6_8x70n")]
 position = Vector2(2050, -1483)
+next_scene = "res://GUI/main_menu.tscn"
 
 [connection signal="body_entered" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_exited"]
@@ -445,3 +448,4 @@ position = Vector2(2050, -1483)
 [connection signal="time_to_die" from="Saws/Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saws/Saw2/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saws/Saw3/SawPath" to="Player" method="_to_die"]
+[connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
