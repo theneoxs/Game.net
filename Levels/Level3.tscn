@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dveg12xb2xq4n"]
+[gd_scene load_steps=10 format=3 uid="uid://dveg12xb2xq4n"]
 
 [ext_resource type="Script" path="res://Levels/Level3.gd" id="1_wgxo7"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="2_iumbv"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="3_ik25a"]
 [ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="4_pqdhw"]
 [ext_resource type="PackedScene" uid="uid://bimpvnua3jloh" path="res://Players/thorn.tscn" id="5_0nsjp"]
+[ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="6_n1w4r"]
 
 [sub_resource type="Curve2D" id="Curve2D_aiwu6"]
 _data = {
@@ -135,6 +136,9 @@ rotation = -1.5708
 [node name="thorn12" parent="Thorns" instance=ExtResource("5_0nsjp")]
 position = Vector2(1767, 1145)
 rotation = -1.5708
+
+[node name="exit_area" parent="." instance=ExtResource("6_n1w4r")]
+position = Vector2(1094, 877)
 
 [connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw2/SawPath" to="Player" method="_to_die"]
