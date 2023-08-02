@@ -107,14 +107,14 @@ func flip_anim(is_left):
 
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "Player":
-		set_collision_mask_value(1, false)
+		#set_collision_mask_value(1, false)
 		onRope = true
 		print('enter')
 
 
 func _on_area_2d_body_exited(body):
 	if body.get_name() == "Player":
-		set_collision_mask_value(1, true)
+		#set_collision_mask_value(1, true)
 		onRope = false
 		print('leave')
 
