@@ -190,6 +190,8 @@ shape = SubResource("RectangleShape2D_uowfh")
 
 [node name="Player" parent="." instance=ExtResource("4_w4388")]
 position = Vector2(183, 961)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

@@ -11,10 +11,10 @@ script = ExtResource("1_5sune")
 scale = Vector2(1, 0.99435)
 color = Color(0.870588, 0, 0.196078, 1)
 texture = SubResource("ImageTexture_lvokf")
-polygon = PackedVector2Array(0, 0, 224, 88.5, 0, 177)
+polygon = PackedVector2Array(0, 0, 64, 32.1818, 0, 64.3637)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(7, 0)
-polygon = PackedVector2Array(-7, 0, -7, 176, 217, 88)
+polygon = PackedVector2Array(-7, 0, -7, 64, 57, 32)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

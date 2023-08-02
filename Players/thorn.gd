@@ -1,5 +1,5 @@
 extends Area2D
-
+signal time_to_die
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

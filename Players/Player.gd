@@ -132,5 +132,3 @@ func _to_die(status = true):
 	is_death = status
 	Global.ser_visible_dead_text(status)
 
-
-
