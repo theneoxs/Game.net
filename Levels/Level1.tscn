@@ -690,8 +690,12 @@ visible = false
 
 [node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("8_lj7io")]
 
+[node name="Respawn" type="Marker2D" parent="."]
+position = Vector2(106, 819)
+
 [connection signal="body_entered" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_exited"]
+[connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw2/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw3/SawPath" to="Player" method="_to_die"]
