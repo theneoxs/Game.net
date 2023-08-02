@@ -29,5 +29,3 @@ func _on_choose_mode_choosing_item(num):
 		var spawn_block = board.instantiate()
 		spawn_block.position = spawnpoint.position
 		add_child(spawn_block)
-
-	
