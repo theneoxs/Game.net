@@ -3,7 +3,7 @@ extends PathFollow2D
 @export var slither_speed = 200
 @onready var path:Path2D = get_parent()
 @onready var l:Line2D
-
+signal time_to_die
 
 # Called when the node enters the scene tree for the first time.
 func _ready():   
@@ -15,3 +15,8 @@ func _ready():
 func _process(delta):
 	set_progress(get_progress() + slither_speed * delta)
 	$SawSprite.rotation += delta*5
+
+
+func _on_saw_body_entered(body):
+	if body.get_name() == "Player":
+		emit_signal("time_to_die")

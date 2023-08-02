@@ -16,9 +16,11 @@ scale = Vector2(4.35938, 4.35938)
 texture = ExtResource("2_uk1dn")
 offset = Vector2(-2.455, -2.46)
 
-[node name="SawCollision" type="StaticBody2D" parent="."]
+[node name="SawSircleArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
-[node name="SawCircleHitbox" type="CollisionShape2D" parent="SawCollision"]
+[node name="SawCircleHitbox" type="CollisionShape2D" parent="SawSircleArea"]
 rotation = -0.0356992
 shape = SubResource("CircleShape2D_4bcpl")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
@@ -26,3 +28,5 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 [node name="_Timer_59288" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[connection signal="body_entered" from="SawSircleArea" to="." method="_on_saw_body_entered"]

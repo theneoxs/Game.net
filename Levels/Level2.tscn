@@ -229,7 +229,7 @@ position = Vector2(1687, 328.375)
 shape = SubResource("RectangleShape2D_uowfh")
 
 [node name="Player" parent="." instance=ExtResource("4_w4388")]
-position = Vector2(1430, 164)
+position = Vector2(183, 961)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
