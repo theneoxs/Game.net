@@ -244,32 +244,32 @@ advance_mode = 2
 advance_condition = &"is_moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ckix4"]
-advance_mode = 2
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i1i5x"]
-advance_mode = 2
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_liupn"]
-advance_mode = 2
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wkki5"]
-advance_mode = 2
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lm1iy"]
 states/End/position = Vector2(1114, 180)
 states/Start/position = Vector2(108, 194)
 states/death/node = SubResource("AnimationNodeAnimation_vvgf6")
-states/death/position = Vector2(808, 194)
+states/death/position = Vector2(868, 210)
 states/idle/node = SubResource("AnimationNodeAnimation_rr5ci")
 states/idle/position = Vector2(374, 194)
 states/jump/node = SubResource("AnimationNodeAnimation_17cp4")
 states/jump/position = Vector2(477, 73)
 states/run/node = SubResource("AnimationNodeAnimation_50h2e")
-states/run/position = Vector2(602, 194)
+states/run/position = Vector2(524, 247)
 states/use/node = SubResource("AnimationNodeAnimation_n8d1y")
 states/use/position = Vector2(477, 334)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sklsx"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_k06tf"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_feog0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_2q062"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_nraoq"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_twbbj"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_ibxgr"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_nisw5"), "run", "death", SubResource("AnimationNodeStateMachineTransition_o0tcg"), "jump", "death", SubResource("AnimationNodeStateMachineTransition_xx5gp"), "idle", "use", SubResource("AnimationNodeStateMachineTransition_uy1ot"), "run", "use", SubResource("AnimationNodeStateMachineTransition_6heal"), "use", "death", SubResource("AnimationNodeStateMachineTransition_4sp0b"), "use", "idle", SubResource("AnimationNodeStateMachineTransition_dyv4c"), "use", "run", SubResource("AnimationNodeStateMachineTransition_wtieq"), "death", "jump", SubResource("AnimationNodeStateMachineTransition_ckix4"), "death", "run", SubResource("AnimationNodeStateMachineTransition_i1i5x"), "death", "idle", SubResource("AnimationNodeStateMachineTransition_liupn"), "death", "use", SubResource("AnimationNodeStateMachineTransition_wkki5")]
-graph_offset = Vector2(-89, 127)
+graph_offset = Vector2(15, 119)
 
 [node name="Player" type="CharacterBody2D"]
 floor_stop_on_slope = false
@@ -282,12 +282,10 @@ position = Vector2(1, 19)
 shape = SubResource("CapsuleShape2D_dudlq")
 
 [node name="Idle" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -15)
 scale = Vector2(2.49479, 2.49479)
 texture = ExtResource("2_1n8dw")
 hframes = 8
-frame = 2
 
 [node name="Walk" type="Sprite2D" parent="."]
 visible = false

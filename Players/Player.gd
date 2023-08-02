@@ -17,6 +17,7 @@ var action_sprite
 var onRope = false
 
 var is_death = false
+var anim_off = false
 
 func _ready():
 	animation_tree.active = true
@@ -88,6 +89,12 @@ func set_anim_tree(is_idle : bool, is_moving : bool, is_jumping : bool, is_dying
 	animation_tree["parameters/conditions/is_jumping"] = is_jumping
 	animation_tree["parameters/conditions/is_death"] = is_dying
 	animation_tree["parameters/conditions/is_action"] = is_action
+	if is_death and !anim_off:
+		anim_off = true
+		get_tree().create_timer(1).timeout.connect(set_anim_off)
+	elif !is_death:
+		anim_off = false
+		animation_tree.active = true
 	
 	idle_sprite.visible = is_idle 
 	walk_sprite.visible = is_moving 
@@ -95,6 +102,8 @@ func set_anim_tree(is_idle : bool, is_moving : bool, is_jumping : bool, is_dying
 	death_sprite.visible = is_dying
 	action_sprite.visible = is_action 
 
+func set_anim_off():
+	animation_tree.active = false
 
 func flip_anim(is_left):
 	idle_sprite.flip_h = is_left
