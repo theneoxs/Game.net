@@ -2,6 +2,7 @@ extends Control
 
 var block = load("res://Players/Block.tscn")
 var board = load("res://Players/Board.tscn")
+var fan = load("res://Players/Fan.tscn")
 @onready var spawnpoint = $Point_spawn
 
 # Called when the node enters the scene tree for the first time.
@@ -27,5 +28,10 @@ func _on_choose_mode_choosing_item(num):
 	
 	elif num == 1:
 		var spawn_block = board.instantiate()
+		spawn_block.position = spawnpoint.position
+		add_child(spawn_block)
+
+	elif num == 2:
+		var spawn_block = fan.instantiate()
 		spawn_block.position = spawnpoint.position
 		add_child(spawn_block)

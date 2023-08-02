@@ -85,8 +85,8 @@ func _physics_process(delta):
 
 func appent_to_conn_vector(vec):
 	print(vec)
-	conn_x += vec.x if abs(conn_x) < SPEED else 0
-	conn_y += vec.y if abs(conn_y) < abs(JUMP_VELOCITY)*0.07 else 0
+	conn_x += vec.x if abs(conn_x) < SPEED*0.8 else 0
+	conn_y += vec.y if abs(conn_y) < abs(JUMP_VELOCITY)*0.06 else 0
 
 func update_animation_parameters():
 	if is_death:

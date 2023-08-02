@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://70pifexxpxl2"]
+[gd_scene load_steps=15 format=3 uid="uid://70pifexxpxl2"]
 
 [ext_resource type="Script" path="res://GUI/choose_mode.gd" id="1_i2478"]
 [ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_r6bug"]
@@ -8,13 +8,23 @@
 atlas = ExtResource("1_r6bug")
 region = Rect2(1024, 576, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cdlug"]
-atlas = ExtResource("1_r6bug")
-region = Rect2(640, 528, 64, 56)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_786mj"]
+load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a55ea618d09.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tixx"]
+atlas = SubResource("CompressedTexture2D_786mj")
+region = Rect2(1088, 512, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0by5p"]
 atlas = ExtResource("1_r6bug")
 region = Rect2(1281.1, 2.94146, 62.092, 61.4712)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o606s"]
+load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a55ea618d09.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fsmc"]
+atlas = SubResource("CompressedTexture2D_o606s")
+region = Rect2(640, 528, 64, 56)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uufyb"]
 load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a55ea618d09.ctex"
@@ -29,6 +39,10 @@ load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a
 [sub_resource type="AtlasTexture" id="AtlasTexture_2aj7n"]
 atlas = SubResource("CompressedTexture2D_jmxpp")
 region = Rect2(1280, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdlug"]
+atlas = ExtResource("1_r6bug")
+region = Rect2(640, 528, 64, 56)
 
 [node name="ChooseMode" type="Control"]
 layout_mode = 3
@@ -100,7 +114,7 @@ layout_mode = 1
 offset_right = 200.0
 offset_bottom = 200.0
 texture_normal = SubResource("AtlasTexture_fj85y")
-texture_disabled = SubResource("AtlasTexture_cdlug")
+texture_disabled = SubResource("AtlasTexture_8tixx")
 stretch_mode = 0
 
 [node name="Text" type="Label" parent="MainBlock/HBoxContainer/Box"]
@@ -129,7 +143,7 @@ layout_mode = 1
 offset_right = 200.0
 offset_bottom = 200.0
 texture_normal = SubResource("AtlasTexture_0by5p")
-texture_disabled = SubResource("AtlasTexture_cdlug")
+texture_disabled = SubResource("AtlasTexture_8fsmc")
 stretch_mode = 0
 
 [node name="Text" type="Label" parent="MainBlock/HBoxContainer/Plank"]
