@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bkug0ve80ydbn"]
+[gd_scene load_steps=40 format=3 uid="uid://bkug0ve80ydbn"]
 
 [ext_resource type="Script" path="res://Players/Player.gd" id="1_w28kr"]
 [ext_resource type="Texture2D" uid="uid://vxlqg6itjjqo" path="res://Players/Sprites/PlayerIdlePushPull/Cyborg_idle.png" id="2_1n8dw"]
@@ -243,6 +243,18 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"is_moving"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ckix4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i1i5x"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_liupn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wkki5"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lm1iy"]
 states/End/position = Vector2(1114, 180)
 states/Start/position = Vector2(108, 194)
@@ -256,8 +268,8 @@ states/run/node = SubResource("AnimationNodeAnimation_50h2e")
 states/run/position = Vector2(602, 194)
 states/use/node = SubResource("AnimationNodeAnimation_n8d1y")
 states/use/position = Vector2(477, 334)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sklsx"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_k06tf"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_feog0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_2q062"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_nraoq"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_twbbj"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_ibxgr"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_nisw5"), "run", "death", SubResource("AnimationNodeStateMachineTransition_o0tcg"), "jump", "death", SubResource("AnimationNodeStateMachineTransition_xx5gp"), "idle", "use", SubResource("AnimationNodeStateMachineTransition_uy1ot"), "run", "use", SubResource("AnimationNodeStateMachineTransition_6heal"), "use", "death", SubResource("AnimationNodeStateMachineTransition_4sp0b"), "use", "idle", SubResource("AnimationNodeStateMachineTransition_dyv4c"), "use", "run", SubResource("AnimationNodeStateMachineTransition_wtieq")]
-graph_offset = Vector2(-91, 49)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sklsx"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_k06tf"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_feog0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_2q062"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_nraoq"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_twbbj"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_ibxgr"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_nisw5"), "run", "death", SubResource("AnimationNodeStateMachineTransition_o0tcg"), "jump", "death", SubResource("AnimationNodeStateMachineTransition_xx5gp"), "idle", "use", SubResource("AnimationNodeStateMachineTransition_uy1ot"), "run", "use", SubResource("AnimationNodeStateMachineTransition_6heal"), "use", "death", SubResource("AnimationNodeStateMachineTransition_4sp0b"), "use", "idle", SubResource("AnimationNodeStateMachineTransition_dyv4c"), "use", "run", SubResource("AnimationNodeStateMachineTransition_wtieq"), "death", "jump", SubResource("AnimationNodeStateMachineTransition_ckix4"), "death", "run", SubResource("AnimationNodeStateMachineTransition_i1i5x"), "death", "idle", SubResource("AnimationNodeStateMachineTransition_liupn"), "death", "use", SubResource("AnimationNodeStateMachineTransition_wkki5")]
+graph_offset = Vector2(-89, 127)
 
 [node name="Player" type="CharacterBody2D"]
 floor_stop_on_slope = false
@@ -275,6 +287,7 @@ position = Vector2(0, -15)
 scale = Vector2(2.49479, 2.49479)
 texture = ExtResource("2_1n8dw")
 hframes = 8
+frame = 2
 
 [node name="Walk" type="Sprite2D" parent="."]
 visible = false

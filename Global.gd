@@ -1,6 +1,7 @@
 extends Node
 
 @onready var black_screen = $CanvasLayer/BlackScreen
+@onready var dead_text = $CanvasLayer/Dead_text
 
 var is_stop_glitch = false
 var next_scr = ""
@@ -55,3 +56,7 @@ func ready_screen():
 	set_visible_black_screen(true)
 	black_screen.modulate.a = 1
 	from_black()
+
+
+func ser_visible_dead_text(vis):
+	dead_text.visible = vis

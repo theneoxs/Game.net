@@ -53,6 +53,8 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
 		velocity.x = 0
+		if Input.is_action_just_pressed("m_restart"):
+			_to_die(false)
 		
 	move_and_slide()
 
@@ -116,5 +118,6 @@ func _on_area_2d_body_exited(body):
 		print('leave')
 
 
-func _to_die():
-	is_death = true
+func _to_die(status = true):
+	is_death = status
+	Global.ser_visible_dead_text(status)

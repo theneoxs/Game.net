@@ -82,4 +82,4 @@ func chose_item(num):
 	is_fin = true
 
 func speed_coef(x):
-	return -0.05+1.0/(1.0+exp(5*pow(1.5*x-1.5, 2)))+pow(x,0.5)/10
+	return -0.1+1.0/(1.0+exp(5*pow(1.5*x-1.5, 2)))+pow(x,0.5)/4
