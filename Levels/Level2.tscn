@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c7ootumjpmuf8"]
+[gd_scene load_steps=18 format=3 uid="uid://c7ootumjpmuf8"]
 
 [ext_resource type="Script" path="res://Levels/Level2.gd" id="1_gfrvq"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="2_mjfbu"]
@@ -113,26 +113,6 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="GDScript" id="GDScript_w75p7"]
-script/source = "extends PathFollow2D
-
-@export var slither_speed = 200
-@onready var path:Path2D = get_parent()
-@onready var l:Line2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():   
-	l = path.get_child(1)
-	for point in path.curve.get_baked_points():  
-		l.add_point(point) 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	set_progress(get_progress() + slither_speed * delta)
-	$SawSprite.rotation += delta*5
-"
-
 [sub_resource type="Curve2D" id="Curve2D_1r2gu"]
 bake_interval = 0.01
 _data = {
@@ -145,26 +125,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1800, 0, 0, 0, 0, 0, 781.193, -4.93341, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1800, 0)
 }
 point_count = 4
-
-[sub_resource type="GDScript" id="GDScript_68i2x"]
-script/source = "extends PathFollow2D
-
-@export var slither_speed = 200
-@onready var path:Path2D = get_parent()
-@onready var l:Line2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():   
-	l = path.get_child(1)
-	for point in path.curve.get_baked_points():  
-		l.add_point(point) 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	set_progress(get_progress() + slither_speed * delta)
-	$SawSprite.rotation += delta*5
-"
 
 [node name="Level2" type="Control"]
 layout_mode = 3
@@ -253,7 +213,6 @@ curve = SubResource("Curve2D_elkch")
 [node name="SawPath" parent="SawNodes/Saw4" instance=ExtResource("5_66xa4")]
 position = Vector2(500, -321)
 rotation = 1.5708
-script = SubResource("GDScript_w75p7")
 
 [node name="Line2D" type="Line2D" parent="SawNodes/Saw4"]
 
@@ -264,8 +223,6 @@ curve = SubResource("Curve2D_elkch")
 [node name="SawPath" parent="SawNodes/Saw6" instance=ExtResource("5_66xa4")]
 position = Vector2(500, -321)
 rotation = 1.5708
-script = SubResource("GDScript_w75p7")
-slither_speed = 300
 
 [node name="Line2D" type="Line2D" parent="SawNodes/Saw6"]
 
@@ -287,8 +244,6 @@ curve = SubResource("Curve2D_tik48")
 [node name="SawPath" parent="SawNodes/Saw3" instance=ExtResource("5_66xa4")]
 position = Vector2(1800, 0)
 rotation = -3.13675
-script = SubResource("GDScript_68i2x")
-slither_speed = 400
 
 [node name="Line2D" type="Line2D" parent="SawNodes/Saw3"]
 
@@ -299,3 +254,8 @@ next_scene = "res://Levels/test_scene.tscn"
 
 [connection signal="body_entered" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_exited"]
+[connection signal="time_to_die" from="SawNodes/Saw/SawPath" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="SawNodes/Saw4/SawPath" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="SawNodes/Saw6/SawPath" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="SawNodes/Saw2/SawPath" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="SawNodes/Saw3/SawPath" to="Player" method="_on_saw_path_time_to_die"]

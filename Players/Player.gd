@@ -131,3 +131,7 @@ func _on_area_2d_body_exited(body):
 func _to_die(status = true):
 	is_death = status
 	Global.ser_visible_dead_text(status)
+
+
+func _on_saw_path_time_to_die():
+	pass # Replace with function body.
