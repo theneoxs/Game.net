@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dveg12xb2xq4n"]
+[gd_scene load_steps=15 format=3 uid="uid://dveg12xb2xq4n"]
 
 [ext_resource type="Script" path="res://Levels/Level3.gd" id="1_wgxo7"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="2_iumbv"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bimpvnua3jloh" path="res://Players/thorn.tscn" id="5_0nsjp"]
 [ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="6_n1w4r"]
 [ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="8_2jtyh"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="9_u4q2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_t0cur")
@@ -236,6 +237,15 @@ position = Vector2(1761, 112)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("8_2jtyh")]
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+offset_left = 36.0
+offset_top = 25.0
+offset_right = 156.0
+offset_bottom = 74.0
+theme_override_fonts/font = ExtResource("9_u4q2p")
+theme_override_font_sizes/font_size = 64
+text = "00:00"
 
 [node name="Point_spawn" type="Node2D" parent="."]
 position = Vector2(1992, 827)

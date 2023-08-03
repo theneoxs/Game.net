@@ -4,9 +4,11 @@ var block = load("res://Players/Block.tscn")
 var board = load("res://Players/Board.tscn")
 var fan = load("res://Players/Fan.tscn")
 @onready var spawnpoint = $Point_spawn
+var time_start = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	time_start = Time.get_unix_time_from_system()
 	Global.in_game = true
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
@@ -15,7 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	$CanvasLayer/TimeLabel.text = Global.calc_complete_time(Time.get_unix_time_from_system() - time_start)
 
 func change_scene_to(scene = Global.next_scr):
 	get_tree().change_scene_to_file(scene)
@@ -45,3 +47,7 @@ func _on_choose_mode_choosing_item(num):
 
 func _respawn_player():
 	$Player.position = $Respawn.position
+
+
+func _on_exit_area_body_entered(body):
+	Global.time2 = Time.get_unix_time_from_system() - time_start

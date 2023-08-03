@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://xkkpyigouepo"]
+[gd_scene load_steps=22 format=3 uid="uid://xkkpyigouepo"]
 
 [ext_resource type="Script" path="res://Levels/Level1.gd" id="1_n3phy"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_ml1i8"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="7_6382o"]
 [ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="8_lj7io"]
 [ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="9_c6d3o"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="11_6lbim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_le4eq"]
 texture = ExtResource("3_ga0l2")
@@ -689,6 +690,15 @@ next_scene = "res://Levels/Level2.tscn"
 
 [node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("8_lj7io")]
 
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+offset_left = 36.0
+offset_top = 25.0
+offset_right = 156.0
+offset_bottom = 74.0
+theme_override_fonts/font = ExtResource("11_6lbim")
+theme_override_font_sizes/font_size = 64
+text = "00:00"
+
 [node name="Respawn" type="Marker2D" parent="."]
 position = Vector2(106, 819)
 
@@ -698,4 +708,5 @@ position = Vector2(106, 819)
 [connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw2/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw3/SawPath" to="Player" method="_to_die"]
+[connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]
 [connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]

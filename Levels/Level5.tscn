@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://m0nkncgmrhfx"]
+[gd_scene load_steps=31 format=3 uid="uid://m0nkncgmrhfx"]
 
 [ext_resource type="Script" path="res://Levels/Level5.gd" id="1_3fy7m"]
 [ext_resource type="Script" path="res://Levels/LiftLevel.gd" id="1_cffup"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Levels/SawSprite.gd" id="6_ntgjd"]
 [ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="8_pqscp"]
 [ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="12_6bplu"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="13_mgoua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("2_eym67")
@@ -365,6 +366,94 @@ texture = ExtResource("5_i5gpd")
 offset = Vector2(-2.455, -2.46)
 script = ExtResource("6_ntgjd")
 
+[node name="SawSprite15" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(15, -764)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite16" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(15, -594)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite17" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(15, -424)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite18" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(15, -251)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite19" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(15, -84)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite20" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(15, 86.0001)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite21" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(15, 250)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite22" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(14.9999, 428)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite23" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(14.9999, 595)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite24" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(14.9999, 759)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite25" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(14.9999, 934)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
 [node name="SawSprite14" type="Sprite2D" parent="Path/PathFollow2D"]
 position = Vector2(14.9999, 1129)
 rotation = 1.5708
@@ -463,6 +552,15 @@ next_scene = "res://GUI/final.tscn"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("12_6bplu")]
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+offset_left = 36.0
+offset_top = 25.0
+offset_right = 156.0
+offset_bottom = 74.0
+theme_override_fonts/font = ExtResource("13_mgoua")
+theme_override_font_sizes/font_size = 64
+text = "00:00"
 
 [node name="Point_spawn" type="Node2D" parent="."]
 position = Vector2(655, 326)

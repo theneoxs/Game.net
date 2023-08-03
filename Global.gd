@@ -41,6 +41,9 @@ var _settings = {
 func _ready():
 	load_settings()
 
+func calc_complete_time(timer_to_complete):
+	return '%02d:%02d' % [(int(timer_to_complete)/60)%60, int(timer_to_complete)%60]
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	process_black_screen(delta)

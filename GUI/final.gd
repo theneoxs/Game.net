@@ -3,6 +3,7 @@ extends Control
 func _ready():
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
+	$TimeHeader/TimeStamp.text = Global.calc_complete_time(Global.time1 + Global.time2 +Global.time3 +Global.time4 +Global.time5 )
 
 
 func _on_next_pressed():
