@@ -3,7 +3,7 @@ extends Control
 var block = load("res://Players/Block.tscn")
 var board = load("res://Players/Board.tscn")
 var fan = load("res://Players/Fan.tscn")
-@onready var spawnpoint = $Point_spawn
+@onready var spawnpoint = $Player/Point_spawn
 var time_start = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,22 +24,22 @@ func change_scene_to(scene = Global.next_scr):
 func _on_choose_mode_choosing_item(num):
 	if num == 0:
 		var spawn_block = Global.block.instantiate()
-		spawn_block.position = spawnpoint.position
+		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
 	
 	elif num == 1:
 		var spawn_block = Global.board.instantiate()
-		spawn_block.position = spawnpoint.position
+		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
 		
 	elif num == 2:
 		var spawn_block = Global.fan.instantiate()
-		spawn_block.position = spawnpoint.position
+		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
 			
 	elif num == 3:
 		var spawn_block = Global.spring.instantiate()
-		spawn_block.position = spawnpoint.position
+		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
 
 

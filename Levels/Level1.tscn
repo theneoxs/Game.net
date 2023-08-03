@@ -645,6 +645,9 @@ collision_layer = 3
 collision_mask = 1
 floor_constant_speed = true
 
+[node name="Point_spawn" type="Node2D" parent="Player"]
+position = Vector2(109, 7)
+
 [node name="Saw1" type="Path2D" parent="."]
 position = Vector2(558, 602)
 curve = SubResource("Curve2D_rysrf")
@@ -678,9 +681,6 @@ rotation = 1.5708
 [node name="LineForRender" type="Line2D" parent="Saw3"]
 default_color = Color(0.54902, 0.227451, 0.0901961, 1)
 joint_mode = 1
-
-[node name="Point_spawn" type="Node2D" parent="."]
-position = Vector2(447, 870)
 
 [node name="exit_area" parent="." instance=ExtResource("9_c6d3o")]
 position = Vector2(1057, 309)

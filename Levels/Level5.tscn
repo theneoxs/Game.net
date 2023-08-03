@@ -546,6 +546,9 @@ position = Vector2(114, 620)
 collision_layer = 3
 collision_mask = 1
 
+[node name="Point_spawn" type="Node2D" parent="Player"]
+position = Vector2(91, 3)
+
 [node name="exit_area" parent="." instance=ExtResource("6_8x70n")]
 position = Vector2(2050, -1483)
 next_scene = "res://GUI/final.tscn"
@@ -562,9 +565,6 @@ offset_bottom = 74.0
 theme_override_fonts/font = ExtResource("13_mgoua")
 theme_override_font_sizes/font_size = 64
 text = "00:00"
-
-[node name="Point_spawn" type="Node2D" parent="."]
-position = Vector2(655, 326)
 
 [node name="Thorns" type="Node" parent="."]
 

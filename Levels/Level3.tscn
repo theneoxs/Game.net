@@ -138,6 +138,10 @@ scale = Vector2(0.75, 0.75)
 collision_layer = 3
 collision_mask = 1
 
+[node name="Point_spawn" type="Node2D" parent="Player"]
+position = Vector2(-153.333, 10.6666)
+scale = Vector2(1.33333, 1.33333)
+
 [node name="Saw1" type="Path2D" parent="."]
 curve = SubResource("Curve2D_aiwu6")
 
@@ -246,9 +250,6 @@ offset_bottom = 74.0
 theme_override_fonts/font = ExtResource("9_u4q2p")
 theme_override_font_sizes/font_size = 64
 text = "00:00"
-
-[node name="Point_spawn" type="Node2D" parent="."]
-position = Vector2(1992, 827)
 
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
