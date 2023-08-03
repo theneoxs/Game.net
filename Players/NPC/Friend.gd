@@ -15,4 +15,5 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.get_name() == "Player":
 		Global.play_rescue_sound()
+		Global.count_rescued_friends += 1
 		queue_free()

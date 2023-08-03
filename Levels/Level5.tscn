@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://m0nkncgmrhfx"]
+[gd_scene load_steps=36 format=3 uid="uid://m0nkncgmrhfx"]
 
 [ext_resource type="Script" path="res://Levels/Level5.gd" id="1_3fy7m"]
 [ext_resource type="Script" path="res://Levels/LiftLevel.gd" id="1_cffup"]
@@ -16,6 +16,8 @@
 [ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="13_mgoua"]
 [ext_resource type="PackedScene" uid="uid://bimpvnua3jloh" path="res://Players/thorn.tscn" id="14_honxm"]
 [ext_resource type="Script" path="res://Levels/TabMode.gd" id="15_1wl5y"]
+[ext_resource type="PackedScene" uid="uid://bqpl6yejppetc" path="res://Players/NPC/Friend.tscn" id="17_sl51k"]
+[ext_resource type="PackedScene" uid="uid://d3d3y3ppsqugm" path="res://Players/NPC/Girlfriend.tscn" id="18_lo2jg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("2_eym67")
@@ -705,6 +707,12 @@ grow_vertical = 2
 border_color = Color(0.788235, 0.0941176, 1, 1)
 border_width = 5.0
 editor_only = false
+
+[node name="Friend" parent="." instance=ExtResource("17_sl51k")]
+position = Vector2(175, -206)
+
+[node name="Girlfriend" parent="." instance=ExtResource("18_lo2jg")]
+position = Vector2(1702, -1393)
 
 [connection signal="body_entered" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_exited"]
