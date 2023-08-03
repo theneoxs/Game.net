@@ -37,3 +37,8 @@ func _on_start_mouse_entered():
 
 func _on_btn_click():
 	Global.play_btn_click()
+
+
+func _on_leaderboard_pressed():
+	Global.set_next_scr("res://GUI/leaderboard.tscn")
+	_on_btn_click()

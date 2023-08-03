@@ -99,7 +99,7 @@ offset_bottom = -218.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_38g5d")
 theme_override_font_sizes/font_size = 36
-text = "Start"
+text = "Старт"
 
 [node name="Settings" type="Button" parent="."]
 custom_minimum_size = Vector2(226, 31)
@@ -114,7 +114,7 @@ offset_bottom = -150.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_38g5d")
 theme_override_font_sizes/font_size = 36
-text = "Settings"
+text = "Настройки"
 
 [node name="Exit" type="Button" parent="."]
 custom_minimum_size = Vector2(226, 31)
@@ -129,7 +129,7 @@ offset_bottom = -81.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_38g5d")
 theme_override_font_sizes/font_size = 36
-text = "Exit"
+text = "Выход"
 
 [node name="Authors" type="Button" parent="."]
 custom_minimum_size = Vector2(226, 31)
@@ -147,7 +147,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_38g5d")
 theme_override_font_sizes/font_size = 36
-text = "Authors"
+text = "Авторы"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -188,6 +188,24 @@ text = "Здесь должен быть главный экран
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Leaderboard" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -192.0
+offset_right = -135.0
+offset_bottom = -150.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_38g5d")
+theme_override_font_sizes/font_size = 36
+text = "Лидерборд"
+
 [connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="mouse_entered" from="Settings" to="." method="_on_start_mouse_entered"]
@@ -196,3 +214,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="mouse_entered" from="Authors" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Authors" to="." method="_on_authors_pressed"]
+[connection signal="mouse_entered" from="Leaderboard" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]

@@ -34,7 +34,7 @@ offset_bottom = -81.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_1qh1r")
 theme_override_font_sizes/font_size = 36
-text = "Back"
+text = "Назад"
 
 [node name="Next" type="Button" parent="."]
 custom_minimum_size = Vector2(226, 31)
@@ -52,7 +52,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_1qh1r")
 theme_override_font_sizes/font_size = 36
-text = "Next"
+text = "Начать"
 
 [node name="MainText" type="Label" parent="."]
 layout_mode = 1

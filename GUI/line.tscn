@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyit132241xti"]
+
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="1_bu3ub"]
+[ext_resource type="Script" path="res://GUI/line.gd" id="1_xedh1"]
+
+[node name="Line" type="HBoxContainer"]
+alignment = 1
+script = ExtResource("1_xedh1")
+
+[node name="Num" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bu3ub")
+theme_override_font_sizes/font_size = 54
+text = "#"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Name" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bu3ub")
+theme_override_font_sizes/font_size = 54
+text = "Имя"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Lvl1" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bu3ub")
+theme_override_font_sizes/font_size = 54
+text = "Ур1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Lvl2" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bu3ub")
+theme_override_font_sizes/font_size = 54
+text = "Ур2"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Lvl3" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bu3ub")
+theme_override_font_sizes/font_size = 54
+text = "Ур3"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Lvl4" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bu3ub")
+theme_override_font_sizes/font_size = 54
+text = "Ур4"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Lvl5" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bu3ub")
+theme_override_font_sizes/font_size = 54
+text = "Ур5"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="TotalLvl" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bu3ub")
+theme_override_font_sizes/font_size = 54
+text = "Всего"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true

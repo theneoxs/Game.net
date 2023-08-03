@@ -26,6 +26,8 @@ var is_changing_scene = false
 
 var in_game = false
 
+var url_server = "http://theneoxs.pythonanywhere.com/denchik_check"
+
 var settings_file = "user://Config.cfg"
 var _config_file = ConfigFile.new()
 

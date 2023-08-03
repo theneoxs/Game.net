@@ -97,7 +97,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_4u5s3")
 theme_override_font_sizes/font_size = 36
-text = "Back"
+text = "Нет"
 
 [node name="Confirm" type="Button" parent="Plate/HBoxContainer"]
 custom_minimum_size = Vector2(226, 31)
@@ -105,7 +105,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_4u5s3")
 theme_override_font_sizes/font_size = 36
-text = "OK"
+text = "Да"
 
 [connection signal="mouse_entered" from="Plate/HBoxContainer/Decline" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Plate/HBoxContainer/Decline" to="." method="_on_decline_pressed"]

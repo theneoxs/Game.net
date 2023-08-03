@@ -35,7 +35,7 @@ offset_bottom = -81.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_nd47y")
 theme_override_font_sizes/font_size = 36
-text = "Back"
+text = "Назад"
 
 [node name="Header" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.270588)
