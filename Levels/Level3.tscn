@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dveg12xb2xq4n"]
+[gd_scene load_steps=22 format=3 uid="uid://dveg12xb2xq4n"]
 
 [ext_resource type="Script" path="res://Levels/Level3.gd" id="1_wgxo7"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="2_iumbv"]
@@ -112,6 +112,36 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 672, 240, 0, 0, 0, 0, 668, 890, 0, 0, 0, 0, 672, 240)
 }
 point_count = 3
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2bsro"]
+
+[sub_resource type="GDScript" id="GDScript_d74ad"]
+script/source = "extends Line2D
+
+@onready var l:Line2D
+@onready var col:CollisionShape2D
+var toclick = false
+var spawnpoint
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	#setRope(Vector2(0, 0), Vector2(500,500))
+	pass
+
+
+func setRope(currentpos, desiredPos):
+	col = get_parent()
+	col.shape.a = currentpos
+	col.shape.b = desiredPos
+	add_point(col.shape.a)
+	add_point(col.shape.b)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if Input.is_action_just_pressed(\"click_l\") and toclick:
+		setRope(Vector2(spawnpoint.global_position.x, spawnpoint.global_position.y), get_global_mouse_position())
+		toclick = false
+"
 
 [node name="Level3" type="Control"]
 layout_mode = 3
@@ -298,6 +328,12 @@ position = Vector2(1175, 962)
 
 [node name="AREAROPE" parent="." instance=ExtResource("14_o2iye")]
 
+[node name="CollisionShape2D" parent="AREAROPE" index="0"]
+shape = SubResource("SegmentShape2D_2bsro")
+
+[node name="Rope" parent="AREAROPE/CollisionShape2D" index="0"]
+script = SubResource("GDScript_d74ad")
+
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw2/SawPath" to="Player" method="_to_die"]
@@ -319,3 +355,5 @@ position = Vector2(1175, 962)
 [connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]
 [connection signal="body_entered" from="AREAROPE" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AREAROPE" to="Player" method="_on_area_2d_body_exited"]
+
+[editable path="AREAROPE"]
