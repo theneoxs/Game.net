@@ -30,3 +30,5 @@ func _on_choose_mode_choosing_item(num):
 
 func _respawn_player():
 	$Player.position = $Respawn.position
+
+	
