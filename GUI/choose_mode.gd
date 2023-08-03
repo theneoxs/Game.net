@@ -64,11 +64,11 @@ func _on_plank_btn_pressed():
 
 
 func _on_rope_btn_pressed():
-	chose_item(0)
+	chose_item(2)
 
 
 func _on_fan_btn_pressed():
-	chose_item(0)
+	chose_item(3)
 
 
 func _on_spring_btn_pressed():

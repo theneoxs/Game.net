@@ -138,11 +138,11 @@ constant_torque = 10.0
 script = ExtResource("1_7eqcl")
 
 [node name="CollisionBoard" type="CollisionShape2D" parent="."]
-position = Vector2(31.5, 95.5)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_35fhg")
 
 [node name="TileBoard" type="TileMap" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(-33, -97)
 tile_set = SubResource("TileSet_giceg")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 1245187, 0, 65536, 1245187, 0, 131072, 1245187, 0)

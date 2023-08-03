@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dveg12xb2xq4n"]
+[gd_scene load_steps=14 format=3 uid="uid://dveg12xb2xq4n"]
 
 [ext_resource type="Script" path="res://Levels/Level3.gd" id="1_wgxo7"]
 [ext_resource type="PackedScene" uid="uid://byuxixe5ke7fh" path="res://LevelObjects/Basetile_map.tscn" id="2_iumbv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="4_pqdhw"]
 [ext_resource type="PackedScene" uid="uid://bimpvnua3jloh" path="res://Players/thorn.tscn" id="5_0nsjp"]
 [ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="6_n1w4r"]
+[ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="8_2jtyh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_t0cur")
@@ -113,6 +114,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_wgxo7")
 
 [node name="Back" parent="." instance=ExtResource("2_iumbv")]
@@ -133,7 +135,7 @@ zoom = Vector2(0.75, 0.75)
 position = Vector2(1768, 106)
 scale = Vector2(0.75, 0.75)
 collision_layer = 3
-collision_mask = 3
+collision_mask = 1
 
 [node name="Saw1" type="Path2D" parent="."]
 curve = SubResource("Curve2D_aiwu6")
@@ -231,6 +233,13 @@ next_scene = "res://Levels/Level4.tscn"
 [node name="Respawn" type="Marker2D" parent="."]
 position = Vector2(1761, 112)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("8_2jtyh")]
+
+[node name="Point_spawn" type="Node2D" parent="."]
+position = Vector2(1992, 827)
+
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="time_to_die" from="Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saw2/SawPath" to="Player" method="_to_die"]
@@ -248,3 +257,4 @@ position = Vector2(1761, 112)
 [connection signal="time_to_die" from="Thorns/thorn10" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn11" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn12" to="Player" method="_to_die"]
+[connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]

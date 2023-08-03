@@ -188,7 +188,11 @@ text = "Здесь должен быть главный экран
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Settings" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="Exit" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="Authors" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Authors" to="." method="_on_authors_pressed"]

@@ -43,10 +43,18 @@ func use_mode(new_mode : int):
 
 
 func _on_decline_pressed():
+	_on_btn_click()
 	decline.emit()
 	queue_free()
 
 
 func _on_confirm_pressed():
+	_on_btn_click()
 	confirm.emit()
 	queue_free()
+
+func _on_start_mouse_entered():
+	Global.play_btn_in()
+
+func _on_btn_click():
+	Global.play_btn_click()

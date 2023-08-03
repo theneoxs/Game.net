@@ -107,5 +107,7 @@ theme_override_fonts/font = ExtResource("2_emnnb")
 theme_override_font_sizes/font_size = 36
 text = "OK"
 
+[connection signal="mouse_entered" from="Plate/HBoxContainer/Decline" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Plate/HBoxContainer/Decline" to="." method="_on_decline_pressed"]
+[connection signal="mouse_entered" from="Plate/HBoxContainer/Confirm" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Plate/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

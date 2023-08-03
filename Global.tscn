@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu8uedaranh5r"]
+[gd_scene load_steps=8 format=3 uid="uid://cu8uedaranh5r"]
 
 [ext_resource type="Script" path="res://Global.gd" id="1_abken"]
 [ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="2_jfrrs"]
+[ext_resource type="AudioStream" uid="uid://d2h4qtueebfcu" path="res://Src/Sound/Text 1.wav" id="3_17g5e"]
+[ext_resource type="AudioStream" uid="uid://bxkk8e56n302s" path="res://Src/Sound/Select 1.wav" id="4_8xhju"]
+[ext_resource type="AudioStream" uid="uid://bijqa6vj3avfr" path="res://Src/Sound/Cancel 1.wav" id="5_fx61u"]
+[ext_resource type="AudioStream" uid="uid://y8vnt3oojwrq" path="res://Src/Sound/Abstraction - Three Red Hearts - Puzzle Pieces.wav" id="6_62exj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jbxnj"]
 blend_mode = 1
@@ -54,3 +58,22 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.443137, 0.443137, 0.443137, 1)
+
+[node name="GUI_btn_in" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_17g5e")
+bus = &"SFX"
+
+[node name="GUI_btn_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8xhju")
+bus = &"SFX"
+
+[node name="GUI_btn_esc" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fx61u")
+bus = &"SFX"
+
+[node name="GUI_main_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_62exj")
+volume_db = -6.741
+bus = &"Music"
+
+[connection signal="finished" from="GUI_main_sound" to="." method="_on_gui_main_sound_finished"]

@@ -227,4 +227,5 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[connection signal="mouse_entered" from="Back" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -50,6 +50,7 @@ func _physics_process(delta):
 			
 		# Handle Jump.
 		if (Input.is_action_just_pressed("m_jump") and is_on_floor()) or (Input.is_action_just_pressed("m_jump") and coyouteTime >0):
+			$SoundJump.play()
 			velocity.y = JUMP_VELOCITY
 			coyouteTime = 0
 
@@ -76,6 +77,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		velocity.x = 0
 		if Input.is_action_just_pressed("m_restart"):
+			$SoundRebirth.play()
 			_to_die(false)
 			emit_signal("respawn_player")
 			
@@ -86,6 +88,11 @@ func _physics_process(delta):
 		coyouteTime = 2.0
 	elif not is_on_floor():
 		coyouteTime -=0.1
+
+func press_to_spring():
+	velocity.y = JUMP_VELOCITY*2
+	$SoundJump.play()
+	coyouteTime = 0
 
 func appent_to_conn_vector(vec):
 	print(vec)
@@ -156,6 +163,8 @@ func _on_area_2d_body_exited(body):
 
 
 func _to_die(status = true):
+	if status:
+		$SoundDeath.play()
 	is_death = status
 	Global.ser_visible_dead_text(status)
 	

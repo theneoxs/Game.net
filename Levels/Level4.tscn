@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bofbmfx36lshy"]
+[gd_scene load_steps=14 format=3 uid="uid://bofbmfx36lshy"]
 
 [ext_resource type="Script" path="res://Levels/Level4.gd" id="1_7ewhp"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_1ieqd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="5_nh87o"]
 [ext_resource type="PackedScene" uid="uid://bimpvnua3jloh" path="res://Players/thorn.tscn" id="6_jfknr"]
 [ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="7_0ligl"]
+[ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="8_nrn12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_qlrjv")
@@ -109,6 +110,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_7ewhp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -121,10 +123,11 @@ layer_0/tile_data = PackedInt32Array(65537, 65536, 3, 131073, 65536, 3, 196609, 
 
 [node name="Player" parent="." instance=ExtResource("2_1ieqd")]
 position = Vector2(768, 913)
+collision_layer = 3
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
-position = Vector2(37, 33)
-scale = Vector2(2.37208, 1.95516)
+position = Vector2(2, 26)
+scale = Vector2(3.53125, 2.04688)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_qdvfi")
 texture_scale = 2.0
@@ -233,6 +236,13 @@ next_scene = "res://Levels/Level5.tscn"
 [node name="Respawn" type="Marker2D" parent="."]
 position = Vector2(130, 124)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("8_nrn12")]
+
+[node name="Point_spawn" type="Node2D" parent="."]
+position = Vector2(264, 108)
+
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="time_to_die" from="Saw/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn" to="Player" method="_to_die"]
@@ -255,3 +265,4 @@ position = Vector2(130, 124)
 [connection signal="time_to_die" from="Thorns/thorn18" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn19" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn20" to="Player" method="_to_die"]
+[connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]

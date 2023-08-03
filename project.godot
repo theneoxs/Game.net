@@ -14,7 +14,7 @@ config/name="Game.net"
 run/main_scene="res://GUI/start_screen.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/bg_color=Color(0.235294, 0, 0.376471, 1)
-boot_splash/show_image=false
+boot_splash/image="res://Levels/back_screen.png"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -93,3 +93,4 @@ m_restart={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/anisotropic_filtering_level=0

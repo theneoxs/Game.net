@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://70pifexxpxl2"]
+[gd_scene load_steps=22 format=3 uid="uid://70pifexxpxl2"]
 
 [ext_resource type="Script" path="res://GUI/choose_mode.gd" id="1_i2478"]
 [ext_resource type="Texture2D" uid="uid://cyckb51mcfxhw" path="res://Src/TestTile/tilesheet_complete.png" id="1_r6bug"]
@@ -40,9 +40,33 @@ load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a
 atlas = SubResource("CompressedTexture2D_jmxpp")
 region = Rect2(1280, 640, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cdlug"]
-atlas = ExtResource("1_r6bug")
-region = Rect2(640, 528, 64, 56)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tg0sy"]
+load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a55ea618d09.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdnnp"]
+atlas = SubResource("CompressedTexture2D_tg0sy")
+region = Rect2(1024, 704, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g1ihj"]
+load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a55ea618d09.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2yfl"]
+atlas = SubResource("CompressedTexture2D_g1ihj")
+region = Rect2(960, 576, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r5c7t"]
+load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a55ea618d09.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmb5q"]
+atlas = SubResource("CompressedTexture2D_r5c7t")
+region = Rect2(1024, 576, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdoh2"]
+load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a55ea618d09.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkwg5"]
+atlas = SubResource("CompressedTexture2D_bdoh2")
+region = Rect2(1088, 512, 64, 64)
 
 [node name="ChooseMode" type="Control"]
 layout_mode = 3
@@ -200,8 +224,8 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 offset_right = 200.0
 offset_bottom = 200.0
-texture_normal = SubResource("AtlasTexture_fj85y")
-texture_disabled = SubResource("AtlasTexture_cdlug")
+texture_normal = SubResource("AtlasTexture_cdnnp")
+texture_disabled = SubResource("AtlasTexture_r2yfl")
 stretch_mode = 0
 
 [node name="Text" type="Label" parent="MainBlock/HBoxContainer/Fan"]
@@ -215,7 +239,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_k6a2m")
 theme_override_font_sizes/font_size = 42
-text = "Куб"
+text = "Пружина"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -229,8 +253,8 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 offset_right = 200.0
 offset_bottom = 200.0
-texture_normal = SubResource("AtlasTexture_fj85y")
-texture_disabled = SubResource("AtlasTexture_cdlug")
+texture_normal = SubResource("AtlasTexture_lmb5q")
+texture_disabled = SubResource("AtlasTexture_hkwg5")
 stretch_mode = 0
 
 [node name="Text" type="Label" parent="MainBlock/HBoxContainer/Spring"]

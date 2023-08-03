@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y8vnt3oojwrq"
+path="res://.godot/imported/Abstraction - Three Red Hearts - Puzzle Pieces.wav-28e5e57c5ccd4618451c03ce1e13071e.sample"
+
+[deps]
+
+source_file="res://Src/Sound/Abstraction - Three Red Hearts - Puzzle Pieces.wav"
+dest_files=["res://.godot/imported/Abstraction - Three Red Hearts - Puzzle Pieces.wav-28e5e57c5ccd4618451c03ce1e13071e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

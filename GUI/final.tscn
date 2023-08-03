@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkkjeqebf3rsv"]
+
+[ext_resource type="Script" path="res://GUI/final.gd" id="1_1t5ay"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="1_4lo82"]
+
+[node name="Final" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1t5ay")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0, 0.376471, 1)
+
+[node name="Next" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -909.0
+offset_top = -123.0
+offset_right = -683.0
+offset_bottom = -81.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_4lo82")
+theme_override_font_sizes/font_size = 36
+text = "Exit"
+
+[node name="MainText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -601.0
+offset_top = -238.0
+offset_right = 601.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_4lo82")
+theme_override_font_sizes/font_size = 64
+text = "Поздравляем, ты всё прошел!
+
+Надеемся, ты весело провел несколько минут своей жизни. Будем рады оценочке, комментарию, а также приятного времяпрепровождения в играх других команд :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="Next" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

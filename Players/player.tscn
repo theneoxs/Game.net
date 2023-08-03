@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bkug0ve80ydbn"]
+[gd_scene load_steps=44 format=3 uid="uid://bkug0ve80ydbn"]
 
 [ext_resource type="Script" path="res://Players/Player.gd" id="1_w28kr"]
 [ext_resource type="Texture2D" uid="uid://vxlqg6itjjqo" path="res://Players/Sprites/PlayerIdlePushPull/Cyborg_idle.png" id="2_1n8dw"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b6k2gbngjppxl" path="res://Players/Sprites/PlayerJump/Cyborg_jump.png" id="4_dnlf5"]
 [ext_resource type="Texture2D" uid="uid://q628cokki4bq" path="res://Players/Sprites/PlayerDeath/Cyborg_death.png" id="5_an0q1"]
 [ext_resource type="Texture2D" uid="uid://cyw71dwjiqgtt" path="res://Players/Sprites/PlayerUse/Use.png" id="6_jw4ql"]
+[ext_resource type="AudioStream" uid="uid://0oercn2jl8y" path="res://Src/Sound/Jump 1.wav" id="7_iooi2"]
+[ext_resource type="AudioStream" uid="uid://h1sutklr6t6g" path="res://Src/Sound/NoAmmo.wav" id="8_ns6qm"]
+[ext_resource type="AudioStream" uid="uid://bxj4s4fphmnt7" path="res://Src/Sound/Block Break 1.wav" id="9_8vnq5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dudlq"]
 radius = 24.0
@@ -278,6 +281,7 @@ radius = 49.8197
 collision_mask = 5
 floor_stop_on_slope = false
 floor_block_on_wall = false
+floor_max_angle = 1.03149
 safe_margin = 2.0
 script = ExtResource("1_w28kr")
 
@@ -340,3 +344,15 @@ parameters/conditions/is_moving = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerAreaTrigger"]
 shape = SubResource("CircleShape2D_15vqo")
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_iooi2")
+bus = &"SFX"
+
+[node name="SoundDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ns6qm")
+bus = &"SFX"
+
+[node name="SoundRebirth" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8vnq5")
+bus = &"SFX"

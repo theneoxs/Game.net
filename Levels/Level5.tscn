@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://m0nkncgmrhfx"]
+[gd_scene load_steps=30 format=3 uid="uid://m0nkncgmrhfx"]
 
 [ext_resource type="Script" path="res://Levels/Level5.gd" id="1_3fy7m"]
 [ext_resource type="Script" path="res://Levels/LiftLevel.gd" id="1_cffup"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="6_8x70n"]
 [ext_resource type="Script" path="res://Levels/SawSprite.gd" id="6_ntgjd"]
 [ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="8_pqscp"]
+[ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="12_6bplu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("2_eym67")
@@ -153,6 +154,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_3fy7m")
 
 [node name="Back" parent="." instance=ExtResource("1_wjdsd")]
@@ -355,6 +357,22 @@ texture = ExtResource("5_i5gpd")
 offset = Vector2(-2.455, -2.46)
 script = ExtResource("6_ntgjd")
 
+[node name="SawSprite13" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(15, -945)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
+[node name="SawSprite14" type="Sprite2D" parent="Path/PathFollow2D"]
+position = Vector2(14.9999, 1129)
+rotation = 1.5708
+scale = Vector2(4.35938, 4.35938)
+texture = ExtResource("5_i5gpd")
+offset = Vector2(-2.455, -2.46)
+script = ExtResource("6_ntgjd")
+
 [node name="SawSprite7" type="Sprite2D" parent="Path/PathFollow2D"]
 position = Vector2(138.776, 1015.2)
 rotation = 1.5708
@@ -436,11 +454,18 @@ slither_speed = 500
 [node name="Player" parent="." instance=ExtResource("2_4513f")]
 position = Vector2(114, 620)
 collision_layer = 3
-collision_mask = 3
+collision_mask = 1
 
 [node name="exit_area" parent="." instance=ExtResource("6_8x70n")]
 position = Vector2(2050, -1483)
-next_scene = "res://GUI/main_menu.tscn"
+next_scene = "res://GUI/final.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("12_6bplu")]
+
+[node name="Point_spawn" type="Node2D" parent="."]
+position = Vector2(655, 326)
 
 [connection signal="body_entered" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_exited"]
@@ -449,3 +474,4 @@ next_scene = "res://GUI/main_menu.tscn"
 [connection signal="time_to_die" from="Saws/Saw2/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saws/Saw3/SawPath" to="Player" method="_to_die"]
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
+[connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]

@@ -806,6 +806,8 @@ size = Vector2(67, 53)
 
 [node name="Fan" type="RigidBody2D"]
 position = Vector2(33, 32)
+collision_layer = 3
+collision_mask = 3
 input_pickable = true
 mass = 10.0
 contact_monitor = true
