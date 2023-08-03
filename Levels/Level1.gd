@@ -32,8 +32,7 @@ func _on_choose_mode_choosing_item(num):
 		var spawn_block = Global.block.instantiate()
 		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
-		rope.toclick = true
-		rope.spawnpoint = spawnpoint
+
 	
 	elif num == 1:
 		var spawn_block = Global.board.instantiate()
