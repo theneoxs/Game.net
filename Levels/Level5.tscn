@@ -711,6 +711,7 @@ rotation = -1.5708
 [connection signal="time_to_die" from="Saws/Saw2/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saws/Saw3/SawPath" to="Player" method="_to_die"]
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
+[connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]
 [connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]
 [connection signal="time_to_die" from="Thorns/thorn" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn2" to="Player" method="_to_die"]

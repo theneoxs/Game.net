@@ -47,4 +47,5 @@ func _respawn_player():
 	$Player.position = $Respawn.position
 
 func _on_exit_area_body_entered(body):
+	print(Time.get_unix_time_from_system() - time_start)
 	Global.time3 = Time.get_unix_time_from_system() - time_start

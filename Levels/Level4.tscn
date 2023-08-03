@@ -275,4 +275,5 @@ text = "00:00"
 [connection signal="time_to_die" from="Thorns/thorn18" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn19" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn20" to="Player" method="_to_die"]
+[connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]
 [connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]
