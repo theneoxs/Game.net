@@ -163,4 +163,3 @@ func _to_die(status = true):
 		$SoundDeath.play()
 	is_death = status
 	Global.ser_visible_dead_text(status)
-	

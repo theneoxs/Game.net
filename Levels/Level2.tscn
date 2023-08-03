@@ -364,7 +364,7 @@ script = SubResource("GDScript_8svwu")
 [connection signal="time_to_die" from="SawNodes/Saw4/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="SawNodes/Saw6/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="SawNodes/Saw2/SawPath" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="SawNodes/Saw3/SawPath" to="Player" method="_on_saw_path_time_to_die"]
+[connection signal="time_to_die" from="SawNodes/Saw3/SawPath" to="Player" method="_to_die"]
 [connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]
 [connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]
 [connection signal="body_entered" from="AREAROPE" to="Player" method="_on_area_2d_body_entered"]
