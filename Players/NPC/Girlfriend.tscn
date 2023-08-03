@@ -76,4 +76,6 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_br3x3")
 anim_player = NodePath("../AnimationPlayer")
 
+[node name="Victory" type="Sprite2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
