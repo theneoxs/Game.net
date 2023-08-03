@@ -10,7 +10,9 @@ func _ready():
 	Global.in_game = true
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
+	Global.accepted_items = [false,false,false,false,false]
 	$Player.position = $Respawn.position
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
