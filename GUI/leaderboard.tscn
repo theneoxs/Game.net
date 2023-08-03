@@ -194,6 +194,7 @@ offset_left = 77.0
 offset_right = -77.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [connection signal="mouse_entered" from="Back" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

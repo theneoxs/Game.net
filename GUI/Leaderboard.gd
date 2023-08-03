@@ -54,11 +54,17 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 	loading.visible = false
 	no_data.visible = false
 	var res = JSON.parse_string(body.get_string_from_utf8())
-	if res["data"] == []:
-		no_data.visible = true
+	var a = {}
+	if res != null:
+		if !("data" in res.keys()):
+			no_data.visible = true
+		elif res["data"] == []:
+			no_data.visible = true
+		else:
+			res_mas = res["data"]
+			sort_table("total")
 	else:
-		res_mas = res["data"]
-		sort_table("total")
+		no_data.visible = true
 
 func clear_table():
 	for i in table.get_children():
