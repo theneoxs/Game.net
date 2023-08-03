@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dso267311acyo"]
+[gd_scene load_steps=14 format=3 uid="uid://dso267311acyo"]
 
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="1_noydi"]
 [ext_resource type="Script" path="res://Levels/test_scene.gd" id="1_yle3w"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://rdximuw00vr0" path="res://Players/death_box.tscn" id="7_p7c73"]
 [ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="8_1ki1h"]
 [ext_resource type="PackedScene" uid="uid://bimpvnua3jloh" path="res://Players/thorn.tscn" id="9_e3ich"]
+[ext_resource type="PackedScene" uid="uid://bqpl6yejppetc" path="res://Players/NPC/Friend.tscn" id="10_wbkcq"]
+[ext_resource type="PackedScene" uid="uid://d3d3y3ppsqugm" path="res://Players/NPC/Girlfriend.tscn" id="11_it3a1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ixjt"]
 texture = ExtResource("3_715jn")
@@ -126,7 +128,6 @@ script = ExtResource("1_yle3w")
 [node name="Player" parent="." instance=ExtResource("1_noydi")]
 collision_layer = 2
 floor_constant_speed = true
-floor_max_angle = 1.03149
 safe_margin = 1.0
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -165,6 +166,12 @@ collision_mask = 3
 
 [node name="Respawn" type="Marker2D" parent="."]
 position = Vector2(118, 764)
+
+[node name="Friend" parent="." instance=ExtResource("10_wbkcq")]
+position = Vector2(1186, 755)
+
+[node name="Girlfriend" parent="." instance=ExtResource("11_it3a1")]
+position = Vector2(1029, 781)
 
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="choosing_item" from="ChooseMode" to="." method="_on_choose_mode_choosing_item"]
