@@ -149,6 +149,9 @@ func load_settings():
 	
 	for action_name in _settings["sound"].keys():
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index(action_name), linear_to_db(_settings["sound"][action_name]))
-	
+
+var count_rescued_friends = 0
+
 func play_rescue_sound():
 	$Rescue.play()
+

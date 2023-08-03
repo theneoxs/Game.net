@@ -2,6 +2,8 @@ extends Control
 
 @onready var time_stamp = $TimeHeader/TimeStamp
 @onready var name_stamp = $NameHeader/NameStamp
+@onready var friend_stamp = $FriendHeader/FriendStamp
+
 
 @onready var httpRequest = $HTTPRequest
 
@@ -11,6 +13,7 @@ func _ready():
 	time_stamp.text = Global.calc_complete_time(Global.time1 + Global.time2 +Global.time3 +Global.time4 +Global.time5 )
 	var hashname = str(hash("%.2f %.2f %.2f %.2f %.2f" % [Global.time1, Global.time2, Global.time3, Global.time4, Global.time5])/10)
 	name_stamp.text = hashname.sha256_text().substr(0, 10)
+	friend_stamp.text = str(Global.count_rescued_friends)
 	var result = {
 		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
 		"data" : {

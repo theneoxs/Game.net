@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bofbmfx36lshy"]
+[gd_scene load_steps=19 format=3 uid="uid://bofbmfx36lshy"]
 
 [ext_resource type="Script" path="res://Levels/Level4.gd" id="1_7ewhp"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_1ieqd"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Levels/ChooseModeController.gd" id="8_rgqf5"]
 [ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="9_0okr4"]
 [ext_resource type="Script" path="res://Levels/TabMode.gd" id="11_t6vob"]
+[ext_resource type="PackedScene" uid="uid://bqpl6yejppetc" path="res://Players/NPC/Friend.tscn" id="12_rqsu3"]
+[ext_resource type="PackedScene" uid="uid://d3d3y3ppsqugm" path="res://Players/NPC/Girlfriend.tscn" id="13_ewnnq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_qlrjv")
@@ -288,6 +290,12 @@ grow_vertical = 2
 border_color = Color(0.788235, 0.0941176, 1, 1)
 border_width = 5.0
 editor_only = false
+
+[node name="Friend" parent="." instance=ExtResource("12_rqsu3")]
+position = Vector2(84, 1010)
+
+[node name="Girlfriend" parent="." instance=ExtResource("13_ewnnq")]
+position = Vector2(1154, 1031)
 
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="time_to_die" from="Saw/SawPath" to="Player" method="_to_die"]

@@ -11,6 +11,7 @@ func _ready():
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
 	Global.accepted_items = [false,false,false,false,false]
+	Global.count_rescued_friends = 0
 	$Player.position = $Respawn.position
 	
 
