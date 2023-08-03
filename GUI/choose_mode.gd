@@ -1,7 +1,7 @@
 extends Control
 
 @onready var items = [$MainBlock/HBoxContainer/Box,$MainBlock/HBoxContainer/Plank, 
-$MainBlock/HBoxContainer/Rope, $MainBlock/HBoxContainer/Fan, $MainBlock/HBoxContainer/Spring]
+ $MainBlock/HBoxContainer/Fan, $MainBlock/HBoxContainer/Spring, $MainBlock/HBoxContainer/Rope]
 
 @onready var main_block = $MainBlock
 @onready var black_block = $ColorRect
