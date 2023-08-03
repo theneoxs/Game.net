@@ -1,6 +1,7 @@
 extends Control
 
 @onready var spawnpoint = $Player/Point_spawn
+@onready var rope = $AREAROPE/CollisionShape2D/Rope
 
 var time_start = 0.0
 
@@ -44,6 +45,9 @@ func _on_choose_mode_choosing_item(num):
 		var spawn_block = Global.spring.instantiate()
 		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
+		
+	elif  num == 4:
+				rope.setRope(Vector2(spawnpoint.global_position.x, spawnpoint.global_position.y), Vector2(500,500))
 
 
 func _respawn_player():
