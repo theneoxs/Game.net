@@ -11,6 +11,7 @@ func _ready():
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
 	time_stamp.text = Global.calc_complete_time(Global.time1 + Global.time2 +Global.time3 +Global.time4 +Global.time5 )
+	check_time(time_stamp.text)
 	var hashname = str(hash("%.2f %.2f %.2f %.2f %.2f" % [Global.time1, Global.time2, Global.time3, Global.time4, Global.time5])/10)
 	name_stamp.text = hashname.sha256_text().substr(0, 10)
 	friend_stamp.text = str(Global.count_rescued_friends)
@@ -49,3 +50,16 @@ func send_HTTPRequest(url, data, use_ssl = false):
 
 func _on_http_request_request_completed(result, response_code, headers, body):
 	print(result)
+
+func check_time(time):
+	if time >= Global.calc_complete_time(300):
+		$FailMan.visible = true
+		$FailMan.play()
+		$FailWoman.visible = true
+		$FailWoman.play()
+	else:
+		$VictoryMan.visible = true
+		$VictoryMan.play()
+		$VictoryWoman.visible = true
+		$VictoryWoman.play()
+

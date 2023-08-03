@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3d3y3ppsqugm"]
+[gd_scene load_steps=10 format=3 uid="uid://d3d3y3ppsqugm"]
 
 [ext_resource type="Script" path="res://Players/NPC/Girlfriend.gd" id="1_d6qby"]
 [ext_resource type="Texture2D" uid="uid://bpt35j72uvjr1" path="res://Players/NPC/Girlfriend/GirlfriendIdle/Punk_idle.png" id="1_iew8r"]
@@ -35,10 +35,14 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_6t4de"]
+resource_name = "Victory"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6vtmx"]
 _data = {
 "Idle": SubResource("Animation_f41fw"),
-"RESET": SubResource("Animation_jyk54")
+"RESET": SubResource("Animation_jyk54"),
+"Victory": SubResource("Animation_6t4de")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sw6vm"]
@@ -49,9 +53,9 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_br3x3"]
 states/Idle/node = SubResource("AnimationNodeAnimation_sw6vm")
-states/Idle/position = Vector2(506, 107)
+states/Idle/position = Vector2(510, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_fu4n5")]
-graph_offset = Vector2(2, 34)
+graph_offset = Vector2(-49, 58)
 
 [node name="Girlfriend" type="Area2D"]
 collision_layer = 3
@@ -75,7 +79,5 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_br3x3")
 anim_player = NodePath("../AnimationPlayer")
-
-[node name="Victory" type="Sprite2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
