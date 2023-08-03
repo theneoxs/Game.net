@@ -313,6 +313,108 @@ rotation = 1.5708
 anchor_mode = 0
 zoom = Vector2(0.75, 0.75)
 
+[node name="thorn" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -947)
+
+[node name="thorn2" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -883)
+
+[node name="thorn3" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -823)
+
+[node name="thorn4" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -762)
+
+[node name="thorn5" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -698)
+
+[node name="thorn6" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -638)
+
+[node name="thorn7" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -577)
+
+[node name="thorn8" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -513)
+
+[node name="thorn9" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -453)
+
+[node name="thorn10" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -392)
+
+[node name="thorn11" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -328)
+
+[node name="thorn12" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -268)
+
+[node name="thorn13" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -209)
+
+[node name="thorn14" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -145)
+
+[node name="thorn15" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -85)
+
+[node name="thorn16" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, -24)
+
+[node name="thorn17" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, 40.0001)
+
+[node name="thorn18" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, 100)
+
+[node name="thorn19" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, 161)
+
+[node name="thorn20" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, 225)
+
+[node name="thorn21" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, 285)
+
+[node name="thorn22" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(55, 346)
+
+[node name="thorn23" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 410)
+
+[node name="thorn24" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 470)
+
+[node name="thorn25" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 535)
+
+[node name="thorn26" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 599)
+
+[node name="thorn27" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 659)
+
+[node name="thorn28" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 720)
+
+[node name="thorn29" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 784)
+
+[node name="thorn30" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 844)
+
+[node name="thorn31" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 901)
+
+[node name="thorn32" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 965)
+
+[node name="thorn33" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 1025)
+
+[node name="thorn34" parent="Path/PathFollow2D" instance=ExtResource("14_honxm")]
+position = Vector2(54.9998, 1082)
+
 [node name="SawSprite" type="Sprite2D" parent="Path/PathFollow2D"]
 position = Vector2(138.776, -0.797607)
 rotation = 1.5708
@@ -555,6 +657,8 @@ position = Vector2(91, 3)
 position = Vector2(2050, -1483)
 next_scene = "res://GUI/final.tscn"
 
+[node name="Thorns" type="Node" parent="."]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("12_bm0fk")
 
@@ -602,184 +706,46 @@ border_color = Color(0.788235, 0.0941176, 1, 1)
 border_width = 5.0
 editor_only = false
 
-[node name="Thorns" type="Node" parent="."]
-
-[node name="thorn" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(53, 1145)
-rotation = -1.5708
-
-[node name="thorn2" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(117, 1145)
-rotation = -1.5708
-
-[node name="thorn3" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(177, 1145)
-rotation = -1.5708
-
-[node name="thorn4" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(238, 1145)
-rotation = -1.5708
-
-[node name="thorn5" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(302, 1145)
-rotation = -1.5708
-
-[node name="thorn6" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(362, 1145)
-rotation = -1.5708
-
-[node name="thorn7" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(423, 1145)
-rotation = -1.5708
-
-[node name="thorn8" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(487, 1145)
-rotation = -1.5708
-
-[node name="thorn9" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(547, 1145)
-rotation = -1.5708
-
-[node name="thorn10" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(608, 1145)
-rotation = -1.5708
-
-[node name="thorn11" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(672, 1145)
-rotation = -1.5708
-
-[node name="thorn12" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(732, 1145)
-rotation = -1.5708
-
-[node name="thorn13" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(791, 1145)
-rotation = -1.5708
-
-[node name="thorn14" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(855, 1145)
-rotation = -1.5708
-
-[node name="thorn15" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(915, 1145)
-rotation = -1.5708
-
-[node name="thorn16" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(976, 1145)
-rotation = -1.5708
-
-[node name="thorn17" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1040, 1145)
-rotation = -1.5708
-
-[node name="thorn18" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1100, 1145)
-rotation = -1.5708
-
-[node name="thorn19" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1161, 1145)
-rotation = -1.5708
-
-[node name="thorn20" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1225, 1145)
-rotation = -1.5708
-
-[node name="thorn21" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1285, 1145)
-rotation = -1.5708
-
-[node name="thorn22" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1346, 1145)
-rotation = -1.5708
-
-[node name="thorn23" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1410, 1145)
-rotation = -1.5708
-
-[node name="thorn24" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1470, 1145)
-rotation = -1.5708
-
-[node name="thorn25" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1535, 1145)
-rotation = -1.5708
-
-[node name="thorn26" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1599, 1145)
-rotation = -1.5708
-
-[node name="thorn27" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1659, 1145)
-rotation = -1.5708
-
-[node name="thorn28" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1720, 1145)
-rotation = -1.5708
-
-[node name="thorn29" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1784, 1145)
-rotation = -1.5708
-
-[node name="thorn30" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1844, 1145)
-rotation = -1.5708
-
-[node name="thorn31" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1901, 1145)
-rotation = -1.5708
-
-[node name="thorn32" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(1965, 1145)
-rotation = -1.5708
-
-[node name="thorn33" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(2025, 1145)
-rotation = -1.5708
-
-[node name="thorn34" parent="Thorns" instance=ExtResource("14_honxm")]
-position = Vector2(2082, 1145)
-rotation = -1.5708
-
 [connection signal="body_entered" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_exited"]
 [connection signal="time_to_die" from="Path/PathFollow2D/death_box" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn2" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn3" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn4" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn5" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn6" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn7" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn8" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn9" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn10" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn11" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn12" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn13" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn14" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn15" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn16" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn17" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn18" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn19" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn20" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn21" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn22" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn23" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn24" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn25" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn26" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn27" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn28" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn29" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn30" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn31" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn32" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn33" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Path/PathFollow2D/thorn34" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saws/Saw1/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saws/Saw2/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Saws/Saw3/SawPath" to="Player" method="_to_die"]
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]
 [connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]
-[connection signal="time_to_die" from="Thorns/thorn" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn2" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn3" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn4" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn5" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn6" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn7" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn8" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn9" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn10" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn11" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn12" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn13" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn14" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn15" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn16" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn17" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn18" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn19" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn20" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn21" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn22" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn23" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn24" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn25" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn26" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn27" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn28" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn29" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn30" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn31" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn32" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn33" to="Player" method="_to_die"]
-[connection signal="time_to_die" from="Thorns/thorn34" to="Player" method="_to_die"]

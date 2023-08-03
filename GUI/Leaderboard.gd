@@ -73,7 +73,7 @@ func clear_table():
 func sort_table(sort_type):
 	type_sort = sort_type
 	if sort_type in ["x", "y", "z", "a", "b"]:
-		res_mas.sort_custom(func(a, b): return float(a[type_sort]) > float(b[type_sort]))
+		res_mas.sort_custom(func(a, b): return float(a[type_sort]) < float(b[type_sort]))
 	elif sort_type == "total":
 		res_mas.sort_custom(sort_by_total)
 	elif sort_type == "name":
@@ -83,7 +83,7 @@ func sort_table(sort_type):
 func sort_by_total(a, b):
 	var total1 = float(a["x"]) + float(a["y"]) + float(a["z"]) + float(a["a"]) + float(a["b"])
 	var total2 = float(b["x"]) + float(b["y"]) + float(b["z"]) + float(b["a"]) + float(b["b"])
-	if total1 > total2:
+	if total1 < total2:
 		return true
 	return false
 
