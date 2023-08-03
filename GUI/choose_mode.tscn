@@ -245,6 +245,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Spring" type="Control" parent="MainBlock/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(200, 250)
 layout_mode = 2
 
