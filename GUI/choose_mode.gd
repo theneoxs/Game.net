@@ -72,7 +72,7 @@ func _on_fan_btn_pressed():
 
 
 func _on_spring_btn_pressed():
-	chose_item(0)
+	chose_item(4)
 
 func chose_item(num):
 	for i in range(len(Global.accepted_items)):

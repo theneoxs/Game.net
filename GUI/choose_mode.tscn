@@ -59,7 +59,7 @@ load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmb5q"]
 atlas = SubResource("CompressedTexture2D_r5c7t")
-region = Rect2(1024, 576, 64, 64)
+region = Rect2(1371.51, 0.192114, 9.59607, 97.654)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdoh2"]
 load_path = "res://.godot/imported/tilesheet_complete.png-02f64188b0c2d03c74598a55ea618d09.ctex"
@@ -186,11 +186,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Rope" type="Control" parent="MainBlock/HBoxContainer"]
+[node name="Fan" type="Control" parent="MainBlock/HBoxContainer"]
 custom_minimum_size = Vector2(200, 250)
 layout_mode = 2
 
-[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Rope"]
+[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Fan"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 offset_right = 200.0
@@ -199,7 +199,7 @@ texture_normal = SubResource("AtlasTexture_0fhls")
 texture_disabled = SubResource("AtlasTexture_2aj7n")
 stretch_mode = 0
 
-[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Rope"]
+[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Fan"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -215,11 +215,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Fan" type="Control" parent="MainBlock/HBoxContainer"]
+[node name="Spring" type="Control" parent="MainBlock/HBoxContainer"]
 custom_minimum_size = Vector2(200, 250)
 layout_mode = 2
 
-[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Fan"]
+[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Spring"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 offset_right = 200.0
@@ -228,7 +228,7 @@ texture_normal = SubResource("AtlasTexture_cdnnp")
 texture_disabled = SubResource("AtlasTexture_r2yfl")
 stretch_mode = 0
 
-[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Fan"]
+[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Spring"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -244,21 +244,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Spring" type="Control" parent="MainBlock/HBoxContainer"]
-visible = false
+[node name="Rope" type="Control" parent="MainBlock/HBoxContainer"]
 custom_minimum_size = Vector2(200, 250)
 layout_mode = 2
 
-[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Spring"]
+[node name="Button" type="TextureButton" parent="MainBlock/HBoxContainer/Rope"]
+modulate = Color(0.363281, 0.261719, 0.242188, 1)
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 offset_right = 200.0
 offset_bottom = 200.0
 texture_normal = SubResource("AtlasTexture_lmb5q")
 texture_disabled = SubResource("AtlasTexture_hkwg5")
-stretch_mode = 0
+stretch_mode = 5
 
-[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Spring"]
+[node name="Text" type="Label" parent="MainBlock/HBoxContainer/Rope"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -269,7 +269,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_k6a2m")
 theme_override_font_sizes/font_size = 42
-text = "Куб"
+text = "Веревка"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -297,6 +297,6 @@ clip_text = true
 
 [connection signal="pressed" from="MainBlock/HBoxContainer/Box/Button" to="." method="_on_cube_btn_pressed"]
 [connection signal="pressed" from="MainBlock/HBoxContainer/Plank/Button" to="." method="_on_plank_btn_pressed"]
-[connection signal="pressed" from="MainBlock/HBoxContainer/Rope/Button" to="." method="_on_rope_btn_pressed"]
-[connection signal="pressed" from="MainBlock/HBoxContainer/Fan/Button" to="." method="_on_fan_btn_pressed"]
-[connection signal="pressed" from="MainBlock/HBoxContainer/Spring/Button" to="." method="_on_spring_btn_pressed"]
+[connection signal="pressed" from="MainBlock/HBoxContainer/Fan/Button" to="." method="_on_rope_btn_pressed"]
+[connection signal="pressed" from="MainBlock/HBoxContainer/Spring/Button" to="." method="_on_fan_btn_pressed"]
+[connection signal="pressed" from="MainBlock/HBoxContainer/Rope/Button" to="." method="_on_spring_btn_pressed"]
