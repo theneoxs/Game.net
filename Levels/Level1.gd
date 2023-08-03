@@ -5,6 +5,7 @@ extends Control
 
 var time_start = 0.0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	time_start = Time.get_unix_time_from_system()
@@ -16,11 +17,12 @@ func _ready():
 	$Player.position = $Respawn.position
 	
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$CanvasLayer/TimeLabel.text = Global.calc_complete_time(Time.get_unix_time_from_system() - time_start)
-
+	
+	
+	
 func change_scene_to(scene = Global.next_scr):
 	get_tree().change_scene_to_file(scene)
 
@@ -30,6 +32,9 @@ func _on_choose_mode_choosing_item(num):
 		var spawn_block = Global.block.instantiate()
 		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
+		rope.toclick = true
+		rope.spawnpoint = spawnpoint
+		print(get_viewport().get_mouse_position())
 	
 	elif num == 1:
 		var spawn_block = Global.board.instantiate()
@@ -47,7 +52,7 @@ func _on_choose_mode_choosing_item(num):
 		add_child(spawn_block)
 		
 	elif  num == 4:
-				rope.setRope(Vector2(spawnpoint.global_position.x, spawnpoint.global_position.y), Vector2(500,500))
+		rope.setRope(Vector2(spawnpoint.global_position.x, spawnpoint.global_position.y), get_viewport().get_mouse_position())
 
 
 func _respawn_player():
