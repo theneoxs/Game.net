@@ -34,7 +34,6 @@ func _on_choose_mode_choosing_item(num):
 		add_child(spawn_block)
 		rope.toclick = true
 		rope.spawnpoint = spawnpoint
-		print(get_viewport().get_mouse_position())
 	
 	elif num == 1:
 		var spawn_block = Global.board.instantiate()
@@ -52,7 +51,8 @@ func _on_choose_mode_choosing_item(num):
 		add_child(spawn_block)
 		
 	elif  num == 4:
-		rope.setRope(Vector2(spawnpoint.global_position.x, spawnpoint.global_position.y), get_viewport().get_mouse_position())
+		rope.toclick = true
+		rope.spawnpoint = spawnpoint
 
 
 func _respawn_player():
