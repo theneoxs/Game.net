@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3d3y3ppsqugm"]
+[gd_scene load_steps=10 format=3 uid="uid://d3d3y3ppsqugm"]
 
 [ext_resource type="Script" path="res://Players/NPC/Girlfriend.gd" id="1_d6qby"]
 [ext_resource type="Texture2D" uid="uid://bpt35j72uvjr1" path="res://Players/NPC/Girlfriend/GirlfriendIdle/Punk_idle.png" id="1_iew8r"]
+[ext_resource type="AudioStream" uid="uid://bxkk8e56n302s" path="res://Src/Sound/Select 1.wav" id="3_1xghc"]
 
 [sub_resource type="Animation" id="Animation_f41fw"]
 resource_name = "Idle"
@@ -75,5 +76,8 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_br3x3")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="Rescue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1xghc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

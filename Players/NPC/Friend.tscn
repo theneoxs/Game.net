@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqpl6yejppetc"]
+[gd_scene load_steps=10 format=3 uid="uid://bqpl6yejppetc"]
 
 [ext_resource type="Texture2D" uid="uid://ci34ijwi0lt6w" path="res://Players/NPC/Friend/Friend_idle/Biker_idle.png" id="1_a7nus"]
 [ext_resource type="Script" path="res://Players/NPC/Friend.gd" id="1_mnrox"]
+[ext_resource type="AudioStream" uid="uid://bxkk8e56n302s" path="res://Src/Sound/Select 1.wav" id="3_3ed3p"]
 
 [sub_resource type="Animation" id="Animation_8d285"]
 length = 0.001
@@ -74,5 +75,8 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_qyfsv")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="Rescue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3ed3p")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

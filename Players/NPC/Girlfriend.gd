@@ -14,3 +14,5 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.get_name() == "Player":
 		print("спас")
+		$Rescue.play()
+		queue_free()
