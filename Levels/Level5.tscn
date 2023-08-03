@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://m0nkncgmrhfx"]
+[gd_scene load_steps=32 format=3 uid="uid://m0nkncgmrhfx"]
 
 [ext_resource type="Script" path="res://Levels/Level5.gd" id="1_3fy7m"]
 [ext_resource type="Script" path="res://Levels/LiftLevel.gd" id="1_cffup"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://de7whpki2sx07" path="res://LevelObjects/saw_path.tscn" id="8_pqscp"]
 [ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="12_6bplu"]
 [ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="13_mgoua"]
+[ext_resource type="PackedScene" uid="uid://bimpvnua3jloh" path="res://Players/thorn.tscn" id="14_honxm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("2_eym67")
@@ -565,6 +566,144 @@ text = "00:00"
 [node name="Point_spawn" type="Node2D" parent="."]
 position = Vector2(655, 326)
 
+[node name="Thorns" type="Node" parent="."]
+
+[node name="thorn" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(53, 1145)
+rotation = -1.5708
+
+[node name="thorn2" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(117, 1145)
+rotation = -1.5708
+
+[node name="thorn3" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(177, 1145)
+rotation = -1.5708
+
+[node name="thorn4" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(238, 1145)
+rotation = -1.5708
+
+[node name="thorn5" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(302, 1145)
+rotation = -1.5708
+
+[node name="thorn6" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(362, 1145)
+rotation = -1.5708
+
+[node name="thorn7" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(423, 1145)
+rotation = -1.5708
+
+[node name="thorn8" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(487, 1145)
+rotation = -1.5708
+
+[node name="thorn9" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(547, 1145)
+rotation = -1.5708
+
+[node name="thorn10" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(608, 1145)
+rotation = -1.5708
+
+[node name="thorn11" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(672, 1145)
+rotation = -1.5708
+
+[node name="thorn12" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(732, 1145)
+rotation = -1.5708
+
+[node name="thorn13" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(791, 1145)
+rotation = -1.5708
+
+[node name="thorn14" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(855, 1145)
+rotation = -1.5708
+
+[node name="thorn15" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(915, 1145)
+rotation = -1.5708
+
+[node name="thorn16" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(976, 1145)
+rotation = -1.5708
+
+[node name="thorn17" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1040, 1145)
+rotation = -1.5708
+
+[node name="thorn18" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1100, 1145)
+rotation = -1.5708
+
+[node name="thorn19" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1161, 1145)
+rotation = -1.5708
+
+[node name="thorn20" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1225, 1145)
+rotation = -1.5708
+
+[node name="thorn21" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1285, 1145)
+rotation = -1.5708
+
+[node name="thorn22" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1346, 1145)
+rotation = -1.5708
+
+[node name="thorn23" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1410, 1145)
+rotation = -1.5708
+
+[node name="thorn24" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1470, 1145)
+rotation = -1.5708
+
+[node name="thorn25" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1535, 1145)
+rotation = -1.5708
+
+[node name="thorn26" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1599, 1145)
+rotation = -1.5708
+
+[node name="thorn27" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1659, 1145)
+rotation = -1.5708
+
+[node name="thorn28" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1720, 1145)
+rotation = -1.5708
+
+[node name="thorn29" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1784, 1145)
+rotation = -1.5708
+
+[node name="thorn30" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1844, 1145)
+rotation = -1.5708
+
+[node name="thorn31" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1901, 1145)
+rotation = -1.5708
+
+[node name="thorn32" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(1965, 1145)
+rotation = -1.5708
+
+[node name="thorn33" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(2025, 1145)
+rotation = -1.5708
+
+[node name="thorn34" parent="Thorns" instance=ExtResource("14_honxm")]
+position = Vector2(2082, 1145)
+rotation = -1.5708
+
 [connection signal="body_entered" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderVert/Area2D" to="Player" method="_on_area_2d_body_exited"]
 [connection signal="time_to_die" from="Path/PathFollow2D/death_box" to="Player" method="_to_die"]
@@ -573,3 +712,37 @@ position = Vector2(655, 326)
 [connection signal="time_to_die" from="Saws/Saw3/SawPath" to="Player" method="_to_die"]
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]
+[connection signal="time_to_die" from="Thorns/thorn" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn2" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn3" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn4" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn5" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn6" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn7" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn8" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn9" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn10" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn11" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn12" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn13" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn14" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn15" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn16" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn17" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn18" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn19" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn20" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn21" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn22" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn23" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn24" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn25" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn26" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn27" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn28" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn29" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn30" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn31" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn32" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn33" to="Player" method="_to_die"]
+[connection signal="time_to_die" from="Thorns/thorn34" to="Player" method="_to_die"]
