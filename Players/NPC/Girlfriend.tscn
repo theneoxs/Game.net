@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d3d3y3ppsqugm"]
 
 [ext_resource type="Script" path="res://Players/NPC/Girlfriend.gd" id="1_d6qby"]
-[ext_resource type="Texture2D" uid="uid://nvbfiw7ogdnq" path="res://Players/NPC/Girlfriend/GirlfriendIdle/Punk_idle.png" id="1_iew8r"]
+[ext_resource type="Texture2D" uid="uid://bpt35j72uvjr1" path="res://Players/NPC/Girlfriend/GirlfriendIdle/Punk_idle.png" id="1_iew8r"]
 
 [sub_resource type="Animation" id="Animation_f41fw"]
 resource_name = "Idle"
