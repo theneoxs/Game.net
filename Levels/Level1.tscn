@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://xkkpyigouepo"]
+[gd_scene load_steps=27 format=3 uid="uid://xkkpyigouepo"]
 
 [ext_resource type="Script" path="res://Levels/Level1.gd" id="1_n3phy"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_ml1i8"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://Levels/TabMode.gd" id="13_fgh6x"]
 [ext_resource type="PackedScene" uid="uid://bqpl6yejppetc" path="res://Players/NPC/Friend.tscn" id="14_i63hq"]
 [ext_resource type="PackedScene" uid="uid://d3d3y3ppsqugm" path="res://Players/NPC/Girlfriend.tscn" id="15_ukq68"]
-[ext_resource type="Script" path="res://Levels/Rope.gd" id="16_tf4ke"]
+[ext_resource type="PackedScene" uid="uid://dqun2gu6pdryx" path="res://LevelObjects/arearope.tscn" id="16_xxx1c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_le4eq"]
 texture = ExtResource("3_ga0l2")
@@ -599,9 +599,6 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_fhonc"]
-b = Vector2(600, 600)
-
 [node name="Level1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -750,13 +747,7 @@ position = Vector2(1946, 941)
 [node name="Girlfriend" parent="." instance=ExtResource("15_ukq68")]
 position = Vector2(1423, 131)
 
-[node name="AREAROPE" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AREAROPE"]
-shape = SubResource("SegmentShape2D_fhonc")
-
-[node name="Rope" type="Line2D" parent="AREAROPE/CollisionShape2D"]
-script = ExtResource("16_tf4ke")
+[node name="AREAROPE" parent="." instance=ExtResource("16_xxx1c")]
 
 [connection signal="body_entered" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LadderMap/Area2D" to="Player" method="_on_area_2d_body_exited"]
