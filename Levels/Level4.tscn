@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bofbmfx36lshy"]
+[gd_scene load_steps=17 format=3 uid="uid://bofbmfx36lshy"]
 
 [ext_resource type="Script" path="res://Levels/Level4.gd" id="1_7ewhp"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_1ieqd"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bimpvnua3jloh" path="res://Players/thorn.tscn" id="6_jfknr"]
 [ext_resource type="PackedScene" uid="uid://cj7ikfxpfjcax" path="res://Levels/exit_area.tscn" id="7_0ligl"]
 [ext_resource type="PackedScene" uid="uid://70pifexxpxl2" path="res://GUI/choose_mode.tscn" id="8_nrn12"]
+[ext_resource type="Script" path="res://Levels/ChooseModeController.gd" id="8_rgqf5"]
 [ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="9_0okr4"]
+[ext_resource type="Script" path="res://Levels/TabMode.gd" id="11_t6vob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_qlrjv")
@@ -241,6 +243,7 @@ next_scene = "res://Levels/Level5.tscn"
 position = Vector2(130, 124)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("8_rgqf5")
 
 [node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("8_nrn12")]
 
@@ -252,6 +255,39 @@ offset_bottom = 74.0
 theme_override_fonts/font = ExtResource("9_0okr4")
 theme_override_font_sizes/font_size = 64
 text = "00:00"
+
+[node name="TabMode" type="ColorRect" parent="CanvasLayer"]
+offset_left = -7.0
+offset_top = 110.0
+offset_right = 62.0
+offset_bottom = 242.0
+color = Color(0.545098, 0.2, 0.396078, 1)
+script = ExtResource("11_t6vob")
+
+[node name="Label" type="Label" parent="CanvasLayer/TabMode"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -42.0
+offset_right = 75.0
+grow_vertical = 0
+rotation = -1.57079
+theme_override_fonts/font = ExtResource("9_0okr4")
+theme_override_font_sizes/font_size = 54
+text = "TAB"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="CanvasLayer/TabMode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.788235, 0.0941176, 1, 1)
+border_width = 5.0
+editor_only = false
 
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="time_to_die" from="Saw/SawPath" to="Player" method="_to_die"]

@@ -5,8 +5,6 @@ extends Control
 
 @onready var httpRequest = $HTTPRequest
 
-var url_server = ""
-
 func _ready():
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
@@ -17,14 +15,14 @@ func _ready():
 		"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
 		"data" : {
 			"name" : name_stamp.text,
-			"x" : Global.time1,
-			"y" : Global.time2,
-			"z" : Global.time3,
-			"a" : Global.time4,
-			"b" : Global.time5
+			"x" : "%.2f" % Global.time1,
+			"y" : "%.2f" % Global.time2,
+			"z" : "%.2f" % Global.time3,
+			"a" : "%.2f" % Global.time4,
+			"b" : "%.2f" % Global.time5
 		}
 	}
-	send_HTTPRequest(url_server, result)
+	send_HTTPRequest(Global.url_server, result)
 	
 
 func _on_next_pressed():

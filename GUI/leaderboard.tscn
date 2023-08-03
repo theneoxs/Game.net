@@ -1,0 +1,209 @@
+[gd_scene load_steps=6 format=3 uid="uid://mpy4tokq4h8s"]
+
+[ext_resource type="Script" path="res://GUI/Leaderboard.gd" id="1_uilj2"]
+[ext_resource type="FontVariation" uid="uid://c5nyi8stdd14c" path="res://Src/Fonts/main_font.tres" id="2_vagnn"]
+[ext_resource type="Shader" path="res://Src/Shaders/Glitch.gdshader" id="3_both6"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_1jkl3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m26co"]
+shader = ExtResource("3_both6")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 1.0
+shader_parameter/shake_speed = 2.455
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uilj2")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.235294, 0, 0.376471, 1)
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -123.0
+offset_right = 364.0
+offset_bottom = -81.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 36
+text = "Назад"
+
+[node name="Next" type="Button" parent="."]
+custom_minimum_size = Vector2(226, 31)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -123.0
+offset_right = -135.0
+offset_bottom = -81.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 36
+text = "Обновить"
+
+[node name="MainText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -601.0
+offset_top = -404.0
+offset_right = 601.0
+offset_bottom = -326.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 64
+text = "Таблица лидеров"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NoData" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -601.0
+offset_top = -95.0
+offset_right = 601.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 64
+text = "Нет данных"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -660.0
+offset_top = -306.0
+offset_right = 660.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 777.0
+offset_right = 1190.0
+offset_bottom = 817.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="NameCheck" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 42
+button_group = SubResource("ButtonGroup_1jkl3")
+text = "Имя"
+
+[node name="CheckLvl1" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 42
+button_group = SubResource("ButtonGroup_1jkl3")
+text = "Ур1"
+
+[node name="CheckLvl2" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 42
+button_group = SubResource("ButtonGroup_1jkl3")
+text = "Ур2"
+
+[node name="CheckLvl3" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 42
+button_group = SubResource("ButtonGroup_1jkl3")
+text = "Ур3"
+
+[node name="CheckLvl4" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 42
+button_group = SubResource("ButtonGroup_1jkl3")
+text = "Ур4"
+
+[node name="CheckLvl5" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 42
+button_group = SubResource("ButtonGroup_1jkl3")
+text = "Ур5"
+
+[node name="CheckLvlTotal" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vagnn")
+theme_override_font_sizes/font_size = 42
+button_pressed = true
+button_group = SubResource("ButtonGroup_1jkl3")
+text = "Всего"
+
+[node name="Loading" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_m26co")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_right = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="mouse_entered" from="Back" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="Next" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="pressed" from="HBoxContainer/NameCheck" to="." method="_on_name_check_pressed"]
+[connection signal="pressed" from="HBoxContainer/CheckLvl1" to="." method="_on_check_lvl_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/CheckLvl2" to="." method="_on_check_lvl_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/CheckLvl3" to="." method="_on_check_lvl_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/CheckLvl4" to="." method="_on_check_lvl_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/CheckLvl5" to="." method="_on_check_lvl_5_pressed"]
+[connection signal="pressed" from="HBoxContainer/CheckLvlTotal" to="." method="_on_check_lvl_total_pressed"]
