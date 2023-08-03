@@ -6,6 +6,8 @@ var fan = load("res://Players/Fan.tscn")
 @onready var spawnpoint = $Player/Point_spawn
 var time_start = 0.0
 var pick_item = 0
+
+@onready var rope = $AREAROPE/CollisionShape2D/Rope
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	time_start = Time.get_unix_time_from_system()
@@ -43,6 +45,10 @@ func _on_choose_mode_choosing_item(num):
 		var spawn_block = Global.spring.instantiate()
 		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
+		
+	elif  num == 4:
+		rope.toclick = true
+		rope.spawnpoint = spawnpoint
 
 
 func _respawn_player():

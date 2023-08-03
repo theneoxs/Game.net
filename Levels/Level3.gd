@@ -4,6 +4,9 @@ var block = load("res://Players/Block.tscn")
 var board = load("res://Players/Board.tscn")
 var fan = load("res://Players/Fan.tscn")
 @onready var spawnpoint = $Player/Point_spawn
+
+@onready var rope = $AREAROPE/CollisionShape2D/Rope
+
 var time_start = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,6 +45,9 @@ func _on_choose_mode_choosing_item(num):
 		spawn_block.position = spawnpoint.global_position
 		add_child(spawn_block)
 
+	elif  num == 4:
+		rope.toclick = true
+		rope.spawnpoint = spawnpoint
 
 func _respawn_player():
 	$Player.position = $Respawn.position

@@ -17,7 +17,6 @@ func setRope(currentpos, desiredPos):
 	col.shape.b = desiredPos
 	add_point(col.shape.a)
 	add_point(col.shape.b)
-	print(col.shape.a, col.shape.b)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

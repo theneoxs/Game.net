@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bofbmfx36lshy"]
+[gd_scene load_steps=20 format=3 uid="uid://bofbmfx36lshy"]
 
 [ext_resource type="Script" path="res://Levels/Level4.gd" id="1_7ewhp"]
 [ext_resource type="PackedScene" uid="uid://bkug0ve80ydbn" path="res://Players/player.tscn" id="2_1ieqd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Levels/TabMode.gd" id="11_t6vob"]
 [ext_resource type="PackedScene" uid="uid://bqpl6yejppetc" path="res://Players/NPC/Friend.tscn" id="12_rqsu3"]
 [ext_resource type="PackedScene" uid="uid://d3d3y3ppsqugm" path="res://Players/NPC/Girlfriend.tscn" id="13_ewnnq"]
+[ext_resource type="PackedScene" uid="uid://dqun2gu6pdryx" path="res://LevelObjects/arearope.tscn" id="14_0utk8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eecdk"]
 texture = ExtResource("3_qlrjv")
@@ -297,6 +298,8 @@ position = Vector2(84, 1010)
 [node name="Girlfriend" parent="." instance=ExtResource("13_ewnnq")]
 position = Vector2(1154, 1031)
 
+[node name="AREAROPE" parent="." instance=ExtResource("14_0utk8")]
+
 [connection signal="respawn_player" from="Player" to="." method="_respawn_player"]
 [connection signal="time_to_die" from="Saw/SawPath" to="Player" method="_to_die"]
 [connection signal="time_to_die" from="Thorns/thorn" to="Player" method="_to_die"]
@@ -321,3 +324,5 @@ position = Vector2(1154, 1031)
 [connection signal="time_to_die" from="Thorns/thorn20" to="Player" method="_to_die"]
 [connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]
 [connection signal="choosing_item" from="CanvasLayer/ChooseMode" to="." method="_on_choose_mode_choosing_item"]
+[connection signal="body_entered" from="AREAROPE" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AREAROPE" to="Player" method="_on_area_2d_body_exited"]
