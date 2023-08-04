@@ -94,6 +94,7 @@ func set_next_scr(new_next_scr, is_start = true):
 
 func ready_screen():
 	next_scr = ""
+	$CanvasLayer/Dead_text.visible = false
 	set_visible_black_screen(true)
 	black_screen.modulate.a = 1
 	from_black()
