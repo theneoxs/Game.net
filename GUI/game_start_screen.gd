@@ -5,6 +5,7 @@ extends Control
 func _ready():
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
+	Global.clear_ststs()
 
 
 func _on_back_pressed():

@@ -23,3 +23,5 @@ func _process(delta):
 	if Input.is_action_just_pressed("click_l") and toclick:
 		setRope(Vector2(spawnpoint.global_position.x, spawnpoint.global_position.y), get_global_mouse_position())
 		toclick = false
+		if get_parent().get_parent().get_parent().has_node("Player/Dot"):
+			get_parent().get_parent().get_parent().get_node("Player/Dot").queue_free()

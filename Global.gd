@@ -7,6 +7,7 @@ var block = load("res://Players/Block.tscn")
 var board = load("res://Players/Board.tscn")
 var fan = load("res://Players/Fan.tscn")
 var spring = load("res://Players/Spring.tscn")
+var dot = load("res://LevelObjects/dot.tscn")
 
 var time1 = 0.0
 var time2 = 0.0
@@ -42,6 +43,14 @@ var _settings = {
 }
 func _ready():
 	load_settings()
+
+func clear_ststs():
+	accepted_items = [false,false,false,false,false]
+	time1 = 0.0
+	time2 = 0.0
+	time3 = 0.0
+	time4 = 0.0
+	time5 = 0.0
 
 func calc_complete_time(timer_to_complete):
 	return '%02d:%02d' % [(int(timer_to_complete)/60)%60, int(timer_to_complete)%60]

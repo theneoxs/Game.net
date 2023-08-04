@@ -12,7 +12,6 @@ func _ready():
 	Global.in_game = true
 	Global.ready_screen()
 	Global.changing_scene.connect(change_scene_to)
-	Global.accepted_items = [false,false,false,false,false]
 	Global.count_rescued_friends = 0
 	$Player.position = $Respawn.position
 	
@@ -50,6 +49,9 @@ func _on_choose_mode_choosing_item(num):
 		add_child(spawn_block)
 		
 	elif  num == 4:
+		var spawn_block = Global.dot.instantiate()
+		$Player.add_child(spawn_block)
+		spawn_block.position = spawnpoint.position
 		rope.toclick = true
 		rope.spawnpoint = spawnpoint
 

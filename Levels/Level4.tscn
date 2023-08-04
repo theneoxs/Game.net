@@ -137,6 +137,8 @@ func _process(delta):
 	if Input.is_action_just_pressed(\"click_l\") and toclick:
 		setRope(Vector2(spawnpoint.global_position.x, spawnpoint.global_position.y), get_global_mouse_position())
 		toclick = false
+		if get_parent().get_parent().get_parent().has_node(\"Player/Dot\"):
+			get_parent().get_parent().get_parent().get_node(\"Player/Dot\").queue_free()
 "
 
 [node name="Level4" type="Control"]
@@ -276,6 +278,7 @@ next_scene = "res://Levels/Level5.tscn"
 position = Vector2(130, 124)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 script = ExtResource("8_rgqf5")
 
 [node name="ChooseMode" parent="CanvasLayer" instance=ExtResource("8_nrn12")]

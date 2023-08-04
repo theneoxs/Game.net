@@ -5,6 +5,9 @@ extends Control
 func _ready():
 	get_tree().paused = true
 
+func _process(delta):
+	if Input.is_action_just_pressed("btn_back"):
+		back()
 
 func _on_decline_pressed():
 	_on_btn_click()
